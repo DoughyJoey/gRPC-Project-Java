@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package task;
+
+option java_package = "com.proto.task";
+option java_multiple_files = true;
+
+service TaskService {
+    rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse) {}
+}
+
+message CreateTaskRequest {
+    Task task = 1;
+}
+
+message CreateTaskResponse {
+    Task task = 1;
+}
+
+message Task {
+    string id = 1;
+    string title = 3;
+    string content = 4;
+}
+
