@@ -8,6 +8,9 @@ option java_multiple_files = true;
 service TaskService {
     rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse) {}
     rpc ReadTask(ReadTaskRequest) returns (ReadTaskResponse){}; // returns NOT_FOUND if task is not found
+    rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse){}; // returns NOT_FOUND if task is not found
+    rpc DeleteBlog(DeleteTaskRequest) returns (DeleteTaskResponse){}; // returns NOT_FOUND if task is not found
+    rpc ListBlog(ListTaskRequest) returns (stream ListTaskResponse){}; // server streaming response
 }
 
 message CreateTaskRequest {
@@ -23,6 +26,30 @@ message ReadTaskRequest {
 }
 
 message ReadTaskResponse {
+    Task task = 1;
+}
+
+message UpdateTaskRequest {
+    Task task = 1;
+}
+
+message UpdateTaskResponse {
+    Task task = 1;
+}
+
+message DeleteTaskRequest {
+    string task_id = 1;
+}
+
+message DeleteTaskResponse {
+    string task_id = 1;
+}
+
+message ListTaskRequest {
+
+}
+
+message ListTaskResponse {
     Task task = 1;
 }
 
