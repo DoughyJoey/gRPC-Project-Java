@@ -81,6 +81,12 @@ public class AlexaClient {
 //        ReadTaskResponse readTaskResponseAfterDeletion = taskClient.readTask(ReadTaskRequest.newBuilder()
 //                .setTaskId(taskId)
 //                .build());
-        
+
+        // LIST TASKS
+        // lists each task found in the database
+        System.out.println("Listing tasks");
+        taskClient.listTask(ListTaskRequest.newBuilder().build()).forEachRemaining(
+                listTaskResponse -> System.out.println(listTaskResponse.getTask().toString())
+        );
     }
 }

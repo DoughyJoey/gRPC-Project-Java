@@ -178,6 +178,19 @@ public class AlexaServiceImpl extends TaskServiceGrpc.TaskServiceImplBase {
         }
     }
 
+    @Override
+    public void listTask(ListTaskRequest request, StreamObserver<ListTaskResponse> responseObserver) {
+        System.out.println("Received List Task Request");
+
+        // gives a list of found documents
+        // streams results back to the client
+        collection.find().iterator().forEachRemaining(document -> responseObserver.onNext(
+                ListTaskResponse.newBuilder().setTask(documentToTask(document)).build()
+        ));
+
+        responseObserver.onCompleted();
+    }
+
     private Task documentToTask(Document document){
         return Task.newBuilder()
                 .setTitle(document.getString("title"))
