@@ -1,9 +1,6 @@
 package com.grpc.task.client;
 
-import com.proto.task.CreateTaskRequest;
-import com.proto.task.CreateTaskResponse;
-import com.proto.task.Task;
-import com.proto.task.TaskServiceGrpc;
+import com.proto.task.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -24,9 +21,10 @@ public class AlexaClient {
 
         TaskServiceGrpc.TaskServiceBlockingStub taskClient = TaskServiceGrpc.newBlockingStub(channel);
 
+        // CREATE TASK
         Task task = Task.newBuilder()
-                .setTitle("Cleaning Reminder")
-                .setContent("Clean kitchen and sitting room this Wednesday")
+                .setTitle("Schedule Appointment")
+                .setContent("Schedule an appointment for the 4th of January")
                 .build();
 
         CreateTaskResponse createResponse = taskClient.createTask(
@@ -37,6 +35,26 @@ public class AlexaClient {
 
         System.out.println("Received create task response");
         System.out.println(createResponse.toString());
+
+        // READ TASK
+        String taskId = createResponse.getTask().getId();
+
+        System.out.println("Reading task....");
+
+        ReadTaskResponse readTaskResponse = taskClient.readTask(ReadTaskRequest.newBuilder()
+                .setTaskId(taskId)
+                .build());
+
+        System.out.println(readTaskResponse.toString());
+
+        // trigger a not found error
+//        System.out.println("Reading task with non existing id....");
+//
+//        ReadTaskResponse readTaskResponseNotFound = taskClient.readTask(ReadTaskRequest.newBuilder()
+//                .setTaskId("5e7f98df22d3cb015c998471")
+//                .build());
+
+        
 
     }
 }

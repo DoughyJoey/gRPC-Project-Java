@@ -7,6 +7,7 @@ option java_multiple_files = true;
 
 service TaskService {
     rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse) {}
+    rpc ReadTask(ReadTaskRequest) returns (ReadTaskResponse){}; // returns NOT_FOUND if task is not found
 }
 
 message CreateTaskRequest {
@@ -14,6 +15,14 @@ message CreateTaskRequest {
 }
 
 message CreateTaskResponse {
+    Task task = 1;
+}
+
+message ReadTaskRequest {
+    string task_id = 1;
+}
+
+message ReadTaskResponse {
     Task task = 1;
 }
 

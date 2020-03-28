@@ -58,6 +58,37 @@ public final class TaskServiceGrpc {
     return getCreateTaskMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.task.ReadTaskRequest,
+      com.proto.task.ReadTaskResponse> getReadTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReadTask",
+      requestType = com.proto.task.ReadTaskRequest.class,
+      responseType = com.proto.task.ReadTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.task.ReadTaskRequest,
+      com.proto.task.ReadTaskResponse> getReadTaskMethod() {
+    io.grpc.MethodDescriptor<com.proto.task.ReadTaskRequest, com.proto.task.ReadTaskResponse> getReadTaskMethod;
+    if ((getReadTaskMethod = TaskServiceGrpc.getReadTaskMethod) == null) {
+      synchronized (TaskServiceGrpc.class) {
+        if ((getReadTaskMethod = TaskServiceGrpc.getReadTaskMethod) == null) {
+          TaskServiceGrpc.getReadTaskMethod = getReadTaskMethod =
+              io.grpc.MethodDescriptor.<com.proto.task.ReadTaskRequest, com.proto.task.ReadTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReadTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.task.ReadTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.task.ReadTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TaskServiceMethodDescriptorSupplier("ReadTask"))
+              .build();
+        }
+      }
+    }
+    return getReadTaskMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -113,6 +144,13 @@ public final class TaskServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateTaskMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void readTask(com.proto.task.ReadTaskRequest request,
+        io.grpc.stub.StreamObserver<com.proto.task.ReadTaskResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getReadTaskMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -122,6 +160,13 @@ public final class TaskServiceGrpc {
                 com.proto.task.CreateTaskRequest,
                 com.proto.task.CreateTaskResponse>(
                   this, METHODID_CREATE_TASK)))
+          .addMethod(
+            getReadTaskMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.task.ReadTaskRequest,
+                com.proto.task.ReadTaskResponse>(
+                  this, METHODID_READ_TASK)))
           .build();
     }
   }
@@ -147,6 +192,14 @@ public final class TaskServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCreateTaskMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void readTask(com.proto.task.ReadTaskRequest request,
+        io.grpc.stub.StreamObserver<com.proto.task.ReadTaskResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getReadTaskMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -168,6 +221,13 @@ public final class TaskServiceGrpc {
     public com.proto.task.CreateTaskResponse createTask(com.proto.task.CreateTaskRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.proto.task.ReadTaskResponse readTask(com.proto.task.ReadTaskRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getReadTaskMethod(), getCallOptions(), request);
     }
   }
 
@@ -192,9 +252,18 @@ public final class TaskServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCreateTaskMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.task.ReadTaskResponse> readTask(
+        com.proto.task.ReadTaskRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getReadTaskMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TASK = 0;
+  private static final int METHODID_READ_TASK = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -216,6 +285,10 @@ public final class TaskServiceGrpc {
         case METHODID_CREATE_TASK:
           serviceImpl.createTask((com.proto.task.CreateTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.task.CreateTaskResponse>) responseObserver);
+          break;
+        case METHODID_READ_TASK:
+          serviceImpl.readTask((com.proto.task.ReadTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.task.ReadTaskResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -279,6 +352,7 @@ public final class TaskServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new TaskServiceFileDescriptorSupplier())
               .addMethod(getCreateTaskMethod())
+              .addMethod(getReadTaskMethod())
               .build();
         }
       }

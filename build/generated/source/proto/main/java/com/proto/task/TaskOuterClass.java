@@ -25,6 +25,16 @@ public final class TaskOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_task_CreateTaskResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_task_ReadTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_task_ReadTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_task_ReadTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_task_ReadTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_task_Task_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -40,11 +50,15 @@ public final class TaskOuterClass {
     java.lang.String[] descriptorData = {
       "\n\017task/task.proto\022\004task\"-\n\021CreateTaskReq" +
       "uest\022\030\n\004task\030\001 \001(\0132\n.task.Task\".\n\022Create" +
-      "TaskResponse\022\030\n\004task\030\001 \001(\0132\n.task.Task\"2" +
-      "\n\004Task\022\n\n\002id\030\001 \001(\t\022\r\n\005title\030\003 \001(\t\022\017\n\007con" +
-      "tent\030\004 \001(\t2P\n\013TaskService\022A\n\nCreateTask\022" +
-      "\027.task.CreateTaskRequest\032\030.task.CreateTa" +
-      "skResponse\"\000B\022\n\016com.proto.taskP\001b\006proto3"
+      "TaskResponse\022\030\n\004task\030\001 \001(\0132\n.task.Task\"\"" +
+      "\n\017ReadTaskRequest\022\017\n\007task_id\030\001 \001(\t\",\n\020Re" +
+      "adTaskResponse\022\030\n\004task\030\001 \001(\0132\n.task.Task" +
+      "\"2\n\004Task\022\n\n\002id\030\001 \001(\t\022\r\n\005title\030\003 \001(\t\022\017\n\007c" +
+      "ontent\030\004 \001(\t2\215\001\n\013TaskService\022A\n\nCreateTa" +
+      "sk\022\027.task.CreateTaskRequest\032\030.task.Creat" +
+      "eTaskResponse\"\000\022;\n\010ReadTask\022\025.task.ReadT" +
+      "askRequest\032\026.task.ReadTaskResponse\"\000B\022\n\016" +
+      "com.proto.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -62,8 +76,20 @@ public final class TaskOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_task_CreateTaskResponse_descriptor,
         new java.lang.String[] { "Task", });
-    internal_static_task_Task_descriptor =
+    internal_static_task_ReadTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_task_ReadTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_task_ReadTaskRequest_descriptor,
+        new java.lang.String[] { "TaskId", });
+    internal_static_task_ReadTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_task_ReadTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_task_ReadTaskResponse_descriptor,
+        new java.lang.String[] { "Task", });
+    internal_static_task_Task_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_task_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_task_Task_descriptor,

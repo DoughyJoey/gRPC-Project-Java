@@ -4,12 +4,13 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.proto.task.CreateTaskRequest;
-import com.proto.task.CreateTaskResponse;
-import com.proto.task.Task;
-import com.proto.task.TaskServiceGrpc;
+import com.proto.task.*;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import org.bson.Document;
+import org.bson.types.ObjectId;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public class AlexaServiceImpl extends TaskServiceGrpc.TaskServiceImplBase {
 
@@ -48,5 +49,53 @@ public class AlexaServiceImpl extends TaskServiceGrpc.TaskServiceImplBase {
         responseObserver.onNext(response);
 
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public void readTask(ReadTaskRequest request, StreamObserver<ReadTaskResponse> responseObserver) {
+
+        System.out.println("Received Read Task request");
+
+        String taskId = request.getTaskId();
+
+        System.out.println("Searching for a task");
+        Document result = null;
+
+        try {
+            result = collection.find(eq("_id", new ObjectId(taskId)))
+                    .first();
+        } catch (Exception e) {
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                            .withDescription("The task with the corresponding id was not found")
+                            .augmentDescription(e.getLocalizedMessage())
+                            .asRuntimeException()
+            );
+        }
+
+        if (result == null) {
+            System.out.println("Task not found");
+            // we don't have a match
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                            .withDescription("The task with the corresponding id was not found")
+                            .asRuntimeException()
+            );
+        } else {
+            System.out.println("Task found, sending response");
+            Task task = documentToTask(result);
+
+            responseObserver.onNext(ReadTaskResponse.newBuilder().setTask(task).build());
+
+            responseObserver.onCompleted();
+        }
+    }
+
+    private Task documentToTask(Document document){
+        return Task.newBuilder()
+                .setTitle(document.getString("title"))
+                .setContent(document.getString("content"))
+                .setId(document.getObjectId("_id").toString())
+                .build();
     }
 }
