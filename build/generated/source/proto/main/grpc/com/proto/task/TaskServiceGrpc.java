@@ -121,65 +121,65 @@ public final class TaskServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.proto.task.DeleteTaskRequest,
-      com.proto.task.DeleteTaskResponse> getDeleteBlogMethod;
+      com.proto.task.DeleteTaskResponse> getDeleteTaskMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteBlog",
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTask",
       requestType = com.proto.task.DeleteTaskRequest.class,
       responseType = com.proto.task.DeleteTaskResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.proto.task.DeleteTaskRequest,
-      com.proto.task.DeleteTaskResponse> getDeleteBlogMethod() {
-    io.grpc.MethodDescriptor<com.proto.task.DeleteTaskRequest, com.proto.task.DeleteTaskResponse> getDeleteBlogMethod;
-    if ((getDeleteBlogMethod = TaskServiceGrpc.getDeleteBlogMethod) == null) {
+      com.proto.task.DeleteTaskResponse> getDeleteTaskMethod() {
+    io.grpc.MethodDescriptor<com.proto.task.DeleteTaskRequest, com.proto.task.DeleteTaskResponse> getDeleteTaskMethod;
+    if ((getDeleteTaskMethod = TaskServiceGrpc.getDeleteTaskMethod) == null) {
       synchronized (TaskServiceGrpc.class) {
-        if ((getDeleteBlogMethod = TaskServiceGrpc.getDeleteBlogMethod) == null) {
-          TaskServiceGrpc.getDeleteBlogMethod = getDeleteBlogMethod =
+        if ((getDeleteTaskMethod = TaskServiceGrpc.getDeleteTaskMethod) == null) {
+          TaskServiceGrpc.getDeleteTaskMethod = getDeleteTaskMethod =
               io.grpc.MethodDescriptor.<com.proto.task.DeleteTaskRequest, com.proto.task.DeleteTaskResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBlog"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTask"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.task.DeleteTaskRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.task.DeleteTaskResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TaskServiceMethodDescriptorSupplier("DeleteBlog"))
+              .setSchemaDescriptor(new TaskServiceMethodDescriptorSupplier("DeleteTask"))
               .build();
         }
       }
     }
-    return getDeleteBlogMethod;
+    return getDeleteTaskMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.proto.task.ListTaskRequest,
-      com.proto.task.ListTaskResponse> getListBlogMethod;
+      com.proto.task.ListTaskResponse> getListTaskMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListBlog",
+      fullMethodName = SERVICE_NAME + '/' + "ListTask",
       requestType = com.proto.task.ListTaskRequest.class,
       responseType = com.proto.task.ListTaskResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.proto.task.ListTaskRequest,
-      com.proto.task.ListTaskResponse> getListBlogMethod() {
-    io.grpc.MethodDescriptor<com.proto.task.ListTaskRequest, com.proto.task.ListTaskResponse> getListBlogMethod;
-    if ((getListBlogMethod = TaskServiceGrpc.getListBlogMethod) == null) {
+      com.proto.task.ListTaskResponse> getListTaskMethod() {
+    io.grpc.MethodDescriptor<com.proto.task.ListTaskRequest, com.proto.task.ListTaskResponse> getListTaskMethod;
+    if ((getListTaskMethod = TaskServiceGrpc.getListTaskMethod) == null) {
       synchronized (TaskServiceGrpc.class) {
-        if ((getListBlogMethod = TaskServiceGrpc.getListBlogMethod) == null) {
-          TaskServiceGrpc.getListBlogMethod = getListBlogMethod =
+        if ((getListTaskMethod = TaskServiceGrpc.getListTaskMethod) == null) {
+          TaskServiceGrpc.getListTaskMethod = getListTaskMethod =
               io.grpc.MethodDescriptor.<com.proto.task.ListTaskRequest, com.proto.task.ListTaskResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBlog"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTask"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.task.ListTaskRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.task.ListTaskResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TaskServiceMethodDescriptorSupplier("ListBlog"))
+              .setSchemaDescriptor(new TaskServiceMethodDescriptorSupplier("ListTask"))
               .build();
         }
       }
     }
-    return getListBlogMethod;
+    return getListTaskMethod;
   }
 
   /**
@@ -253,16 +253,16 @@ public final class TaskServiceGrpc {
 
     /**
      */
-    public void deleteBlog(com.proto.task.DeleteTaskRequest request,
+    public void deleteTask(com.proto.task.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.proto.task.DeleteTaskResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteBlogMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteTaskMethod(), responseObserver);
     }
 
     /**
      */
-    public void listBlog(com.proto.task.ListTaskRequest request,
+    public void listTask(com.proto.task.ListTaskRequest request,
         io.grpc.stub.StreamObserver<com.proto.task.ListTaskResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListBlogMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getListTaskMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -289,19 +289,19 @@ public final class TaskServiceGrpc {
                 com.proto.task.UpdateTaskResponse>(
                   this, METHODID_UPDATE_TASK)))
           .addMethod(
-            getDeleteBlogMethod(),
+            getDeleteTaskMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.proto.task.DeleteTaskRequest,
                 com.proto.task.DeleteTaskResponse>(
-                  this, METHODID_DELETE_BLOG)))
+                  this, METHODID_DELETE_TASK)))
           .addMethod(
-            getListBlogMethod(),
+            getListTaskMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 com.proto.task.ListTaskRequest,
                 com.proto.task.ListTaskResponse>(
-                  this, METHODID_LIST_BLOG)))
+                  this, METHODID_LIST_TASK)))
           .build();
     }
   }
@@ -346,18 +346,18 @@ public final class TaskServiceGrpc {
 
     /**
      */
-    public void deleteBlog(com.proto.task.DeleteTaskRequest request,
+    public void deleteTask(com.proto.task.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.proto.task.DeleteTaskResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteBlogMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void listBlog(com.proto.task.ListTaskRequest request,
+    public void listTask(com.proto.task.ListTaskRequest request,
         io.grpc.stub.StreamObserver<com.proto.task.ListTaskResponse> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getListBlogMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListTaskMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -398,17 +398,17 @@ public final class TaskServiceGrpc {
 
     /**
      */
-    public com.proto.task.DeleteTaskResponse deleteBlog(com.proto.task.DeleteTaskRequest request) {
+    public com.proto.task.DeleteTaskResponse deleteTask(com.proto.task.DeleteTaskRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteBlogMethod(), getCallOptions(), request);
+          getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<com.proto.task.ListTaskResponse> listBlog(
+    public java.util.Iterator<com.proto.task.ListTaskResponse> listTask(
         com.proto.task.ListTaskRequest request) {
       return blockingServerStreamingCall(
-          getChannel(), getListBlogMethod(), getCallOptions(), request);
+          getChannel(), getListTaskMethod(), getCallOptions(), request);
     }
   }
 
@@ -452,18 +452,18 @@ public final class TaskServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.proto.task.DeleteTaskResponse> deleteBlog(
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.task.DeleteTaskResponse> deleteTask(
         com.proto.task.DeleteTaskRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteBlogMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_CREATE_TASK = 0;
   private static final int METHODID_READ_TASK = 1;
   private static final int METHODID_UPDATE_TASK = 2;
-  private static final int METHODID_DELETE_BLOG = 3;
-  private static final int METHODID_LIST_BLOG = 4;
+  private static final int METHODID_DELETE_TASK = 3;
+  private static final int METHODID_LIST_TASK = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -494,12 +494,12 @@ public final class TaskServiceGrpc {
           serviceImpl.updateTask((com.proto.task.UpdateTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.task.UpdateTaskResponse>) responseObserver);
           break;
-        case METHODID_DELETE_BLOG:
-          serviceImpl.deleteBlog((com.proto.task.DeleteTaskRequest) request,
+        case METHODID_DELETE_TASK:
+          serviceImpl.deleteTask((com.proto.task.DeleteTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.task.DeleteTaskResponse>) responseObserver);
           break;
-        case METHODID_LIST_BLOG:
-          serviceImpl.listBlog((com.proto.task.ListTaskRequest) request,
+        case METHODID_LIST_TASK:
+          serviceImpl.listTask((com.proto.task.ListTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.task.ListTaskResponse>) responseObserver);
           break;
         default:
@@ -566,8 +566,8 @@ public final class TaskServiceGrpc {
               .addMethod(getCreateTaskMethod())
               .addMethod(getReadTaskMethod())
               .addMethod(getUpdateTaskMethod())
-              .addMethod(getDeleteBlogMethod())
-              .addMethod(getListBlogMethod())
+              .addMethod(getDeleteTaskMethod())
+              .addMethod(getListTaskMethod())
               .build();
         }
       }

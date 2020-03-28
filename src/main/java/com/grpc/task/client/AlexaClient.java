@@ -69,5 +69,18 @@ public class AlexaClient {
         System.out.println("Updated task");
         System.out.println(updateTaskResponse.toString());
 
+        // DELETE TASK
+        System.out.println("Deleting task");
+        DeleteTaskResponse deleteTaskResponse = taskClient.deleteTask(
+                DeleteTaskRequest.newBuilder().setTaskId(taskId).build()
+        );
+        System.out.println("Deleted task");
+
+        //System.out.println("Reading task");
+        // this should return NOT_FOUND
+//        ReadTaskResponse readTaskResponseAfterDeletion = taskClient.readTask(ReadTaskRequest.newBuilder()
+//                .setTaskId(taskId)
+//                .build());
+        
     }
 }

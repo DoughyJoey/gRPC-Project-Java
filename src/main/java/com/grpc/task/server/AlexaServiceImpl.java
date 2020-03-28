@@ -4,6 +4,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.DeleteResult;
 import com.proto.task.*;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
@@ -137,6 +138,41 @@ public class AlexaServiceImpl extends TaskServiceGrpc.TaskServiceImplBase {
                             .setTask(documentToTask(replacement))
                             .build()
             );
+
+            responseObserver.onCompleted();
+        }
+    }
+
+    @Override
+    public void deleteTask(DeleteTaskRequest request, StreamObserver<DeleteTaskResponse> responseObserver) {
+        System.out.println("Received Delete Task Request");
+
+        String taskId = request.getTaskId();
+        DeleteResult result = null;
+        try {
+            result = collection.deleteOne(eq("_id", new ObjectId(taskId)));
+        } catch (Exception e) {
+            System.out.println("Task not found");
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                            .withDescription("The task with the corresponding id was not found")
+                            .augmentDescription(e.getLocalizedMessage())
+                            .asRuntimeException()
+            );
+        }
+
+        if (result.getDeletedCount() == 0) {
+            System.out.println("Task not found");
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                            .withDescription("The task with the corresponding id was not found")
+                            .asRuntimeException()
+            );
+        } else {
+            System.out.println("Task was deleted");
+            responseObserver.onNext(DeleteTaskResponse.newBuilder()
+                    .setTaskId(taskId)
+                    .build());
 
             responseObserver.onCompleted();
         }

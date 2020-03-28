@@ -95,9 +95,9 @@ public final class TaskOuterClass {
       "skResponse\"\000\022;\n\010ReadTask\022\025.task.ReadTask" +
       "Request\032\026.task.ReadTaskResponse\"\000\022A\n\nUpd" +
       "ateTask\022\027.task.UpdateTaskRequest\032\030.task." +
-      "UpdateTaskResponse\"\000\022A\n\nDeleteBlog\022\027.tas" +
+      "UpdateTaskResponse\"\000\022A\n\nDeleteTask\022\027.tas" +
       "k.DeleteTaskRequest\032\030.task.DeleteTaskRes" +
-      "ponse\"\000\022=\n\010ListBlog\022\025.task.ListTaskReque" +
+      "ponse\"\000\022=\n\010ListTask\022\025.task.ListTaskReque" +
       "st\032\026.task.ListTaskResponse\"\0000\001B\022\n\016com.pr" +
       "oto.taskP\001b\006proto3"
     };

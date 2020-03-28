@@ -9,8 +9,8 @@ service TaskService {
     rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse) {}
     rpc ReadTask(ReadTaskRequest) returns (ReadTaskResponse){}; // returns NOT_FOUND if task is not found
     rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse){}; // returns NOT_FOUND if task is not found
-    rpc DeleteBlog(DeleteTaskRequest) returns (DeleteTaskResponse){}; // returns NOT_FOUND if task is not found
-    rpc ListBlog(ListTaskRequest) returns (stream ListTaskResponse){}; // server streaming response
+    rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse){}; // returns NOT_FOUND if task is not found
+    rpc ListTask(ListTaskRequest) returns (stream ListTaskResponse){}; // server streaming response
 }
 
 message CreateTaskRequest {
