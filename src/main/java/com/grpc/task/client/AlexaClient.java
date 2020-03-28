@@ -55,6 +55,19 @@ public class AlexaClient {
 //                .build());
 
 
+        // UPDATE TASK
+        Task newTask = Task.newBuilder()
+                .setId(taskId)
+                .setTitle("New appointment (updated)!")
+                .setContent("Appointment is now scheduled for the 17 of March (Updated)!")
+                .build();
+
+        System.out.println("Updating task...");
+        UpdateTaskResponse updateTaskResponse = taskClient.updateTask(
+                UpdateTaskRequest.newBuilder().setTask(newTask).build());
+
+        System.out.println("Updated task");
+        System.out.println(updateTaskResponse.toString());
 
     }
 }
