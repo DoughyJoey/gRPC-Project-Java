@@ -1,8 +1,9 @@
 package com.grpc.smart_watch.client;
 
-import com.proto.sleep.SleepAverageRequest;
-import com.proto.sleep.SleepAverageResponse;
-import com.proto.sleep.SleepServiceGrpc;
+
+import com.proto.smart_watch.SleepAverageRequest;
+import com.proto.smart_watch.SleepAverageResponse;
+import com.proto.smart_watch.WatchServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
@@ -33,7 +34,7 @@ public class WatchClient {
     }
 
     private void doSleepStreamingCall(ManagedChannel channel){
-        SleepServiceGrpc.SleepServiceStub asyncClient = SleepServiceGrpc.newStub(channel);
+        WatchServiceGrpc.WatchServiceStub asyncClient = WatchServiceGrpc.newStub(channel);
 
         CountDownLatch latch = new CountDownLatch(1);
 
@@ -91,4 +92,5 @@ public class WatchClient {
             e.printStackTrace();
         }
     }
+
 }

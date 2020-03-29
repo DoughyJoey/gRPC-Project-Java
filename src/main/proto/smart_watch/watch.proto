@@ -14,8 +14,18 @@ message SleepAverageResponse {
     double average = 1;
 }
 
-service SleepService {
+message MaxHeartRateRequest {
+    int32 number = 1;
+}
+
+message MaxHeartRateResponse {
+    int32 maximum = 1;
+}
+
+service WatchService {
 
     rpc SleepAverage(stream SleepAverageRequest) returns (SleepAverageResponse) {};
+
+    rpc MaxHeartRate(stream MaxHeartRateRequest) returns (stream MaxHeartRateResponse) {};
 
 }

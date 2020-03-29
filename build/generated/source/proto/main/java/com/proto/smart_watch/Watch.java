@@ -24,6 +24,16 @@ public final class Watch {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_smart_watch_SleepAverageResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_smart_watch_MaxHeartRateRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_smart_watch_MaxHeartRateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_smart_watch_MaxHeartRateResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_smart_watch_MaxHeartRateResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -35,11 +45,15 @@ public final class Watch {
     java.lang.String[] descriptorData = {
       "\n\027smart_watch/watch.proto\022\013smart_watch\"%" +
       "\n\023SleepAverageRequest\022\016\n\006number\030\001 \001(\005\"\'\n" +
-      "\024SleepAverageResponse\022\017\n\007average\030\001 \001(\0012g" +
-      "\n\014SleepService\022W\n\014SleepAverage\022 .smart_w" +
-      "atch.SleepAverageRequest\032!.smart_watch.S" +
-      "leepAverageResponse\"\000(\001B\031\n\025com.proto.sma" +
-      "rt_watchP\001b\006proto3"
+      "\024SleepAverageResponse\022\017\n\007average\030\001 \001(\001\"%" +
+      "\n\023MaxHeartRateRequest\022\016\n\006number\030\001 \001(\005\"\'\n" +
+      "\024MaxHeartRateResponse\022\017\n\007maximum\030\001 \001(\0052\302" +
+      "\001\n\014WatchService\022W\n\014SleepAverage\022 .smart_" +
+      "watch.SleepAverageRequest\032!.smart_watch." +
+      "SleepAverageResponse\"\000(\001\022Y\n\014MaxHeartRate" +
+      "\022 .smart_watch.MaxHeartRateRequest\032!.sma" +
+      "rt_watch.MaxHeartRateResponse\"\000(\0010\001B\031\n\025c" +
+      "om.proto.smart_watchP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -57,6 +71,18 @@ public final class Watch {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_smart_watch_SleepAverageResponse_descriptor,
         new java.lang.String[] { "Average", });
+    internal_static_smart_watch_MaxHeartRateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_smart_watch_MaxHeartRateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_smart_watch_MaxHeartRateRequest_descriptor,
+        new java.lang.String[] { "Number", });
+    internal_static_smart_watch_MaxHeartRateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_smart_watch_MaxHeartRateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_smart_watch_MaxHeartRateResponse_descriptor,
+        new java.lang.String[] { "Maximum", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

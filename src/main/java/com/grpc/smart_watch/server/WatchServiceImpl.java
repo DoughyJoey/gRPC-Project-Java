@@ -1,11 +1,13 @@
 package com.grpc.smart_watch.server;
 
-import com.proto.sleep.SleepAverageRequest;
-import com.proto.sleep.SleepAverageResponse;
-import com.proto.sleep.SleepServiceGrpc;
+import com.proto.smart_watch.SleepAverageRequest;
+import com.proto.smart_watch.SleepAverageResponse;
+import com.proto.smart_watch.WatchServiceGrpc;
 import io.grpc.stub.StreamObserver;
 
-public class WatchServiceImpl extends SleepServiceGrpc.SleepServiceImplBase {
+import java.nio.file.WatchService;
+
+public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
 
     @Override
     public StreamObserver<SleepAverageRequest> sleepAverage(StreamObserver<SleepAverageResponse> responseObserver) {
