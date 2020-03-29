@@ -1,8 +1,6 @@
 package com.grpc.smart_watch.server;
 
-import com.proto.smart_watch.SleepAverageRequest;
-import com.proto.smart_watch.SleepAverageResponse;
-import com.proto.smart_watch.WatchServiceGrpc;
+import com.proto.smart_watch.*;
 import io.grpc.stub.StreamObserver;
 
 import java.nio.file.WatchService;
@@ -43,5 +41,46 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
         };
 
         return requestObserver;
+    }
+
+    @Override
+    public StreamObserver<MaxHeartRateRequest> maxHeartRate(StreamObserver<MaxHeartRateResponse> responseObserver) {
+
+        return new StreamObserver<MaxHeartRateRequest>() {
+
+            int currentMaximum = 0;
+
+            @Override
+            public void onNext(MaxHeartRateRequest value) {
+                int currentNumber = value.getNumber();
+
+                if (currentNumber > currentMaximum) {
+                    currentMaximum = currentNumber;
+                    responseObserver.onNext(
+                            MaxHeartRateResponse.newBuilder()
+                                    .setMaximum(currentMaximum)
+                                    .build()
+                    );
+                } else {
+                    // nothing
+                }
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                responseObserver.onCompleted();
+            }
+
+            @Override
+            public void onCompleted() {
+                // send the current last maximum
+                responseObserver.onNext(
+                        MaxHeartRateResponse.newBuilder()
+                                .setMaximum(currentMaximum)
+                                .build());
+                // the server is done sending data
+                responseObserver.onCompleted();
+            }
+        };
     }
 }

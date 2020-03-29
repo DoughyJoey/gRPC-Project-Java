@@ -1,13 +1,12 @@
 package com.grpc.smart_watch.client;
 
 
-import com.proto.smart_watch.SleepAverageRequest;
-import com.proto.smart_watch.SleepAverageResponse;
-import com.proto.smart_watch.WatchServiceGrpc;
+import com.proto.smart_watch.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
+import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +25,7 @@ public class WatchClient {
                 .build();
 
         doSleepStreamingCall(channel);
+        doHeartRateStreamingCall(channel);
 
 
         System.out.println("Shutting down channel");
@@ -83,6 +83,53 @@ public class WatchClient {
 //                    .setNumber(i)
 //                    .build());
 //        }
+
+        requestObserver.onCompleted();
+
+        try {
+            latch.await(3, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void doHeartRateStreamingCall(ManagedChannel channel){
+        WatchServiceGrpc.WatchServiceStub asyncClient = WatchServiceGrpc.newStub(channel);
+
+        CountDownLatch latch = new CountDownLatch(1);
+
+
+        StreamObserver<MaxHeartRateRequest> requestObserver = asyncClient.maxHeartRate(new StreamObserver<MaxHeartRateResponse>() {
+            @Override
+            public void onNext(MaxHeartRateResponse value) {
+                System.out.println("Your maximum heart rate is: " + value.getMaximum());
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                latch.countDown();
+            }
+
+            @Override
+            public void onCompleted() {
+                System.out.println("Server is done sending messages");
+            }
+        });
+
+
+        Arrays.asList(68, 65, 77, 80, 101, 111, 90).forEach(
+                number -> {
+                    System.out.println("Current heart rate: " + number);
+                    requestObserver.onNext(MaxHeartRateRequest.newBuilder()
+                            .setNumber(number)
+                            .build());
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+        );
 
         requestObserver.onCompleted();
 

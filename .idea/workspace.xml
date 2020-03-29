@@ -2,48 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19787c98-5fb2-4949-8d8b-022c11c9ba8b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/sleep/SleepServiceGrpc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/sleep/Sleep.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/sleep/SleepAverageRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/sleep/SleepAverageRequestOrBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/sleep/SleepAverageResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/sleep/SleepAverageResponseOrBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/smart_watch/Watch.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/smart_watch/Watch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/Sleep.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageRequest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageRequest$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageRequestOrBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageResponse$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageResponse$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepAverageResponseOrBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$MethodHandlers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$SleepServiceBaseDescriptorSupplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$SleepServiceBlockingStub.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$SleepServiceFileDescriptorSupplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$SleepServiceFutureStub.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$SleepServiceImplBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$SleepServiceMethodDescriptorSupplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc$SleepServiceStub.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/sleep/SleepServiceGrpc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/Watch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/Watch.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/client/WatchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/client/WatchClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/smart_watch/watch.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/smart_watch/watch.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,22 +178,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585473499127" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585478957976">
+    <state width="1237" height="310" key="GridCell.Tab.0.bottom" timestamp="1585479632615">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585478957976" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585478957976">
+    <state width="1237" height="310" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585479632615" />
+    <state width="1237" height="310" key="GridCell.Tab.0.center" timestamp="1585479632614">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585478957976" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585478957976">
+    <state width="1237" height="310" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585479632614" />
+    <state width="1237" height="310" key="GridCell.Tab.0.left" timestamp="1585479632614">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585478957976" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585478957976">
+    <state width="1237" height="310" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585479632614" />
+    <state width="1237" height="310" key="GridCell.Tab.0.right" timestamp="1585479632614">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585478957976" />
+    <state width="1237" height="310" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585479632614" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1585411868067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
