@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19787c98-5fb2-4949-8d8b-022c11c9ba8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/client/WatchClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/proto/smart_watch/watch.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/task/client/AlexaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/task/client/AlexaClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/task/server/AlexaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/task/server/AlexaServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/task/server/AlexaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/task/server/AlexaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/task/client/AlexaClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/task/server/AlexaServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/task/server/AlexaServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/task/client/AlexaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/alexa/client/AlexaClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/task/server/AlexaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/alexa/server/AlexaServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/task/server/AlexaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/alexa/server/AlexaServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +72,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZlRQ5Qv3QL2Zy8ki9xn5Zc8afw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -70,13 +85,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Application.AlexaServer">
+  <component name="RunManager" selected="Application.WatchClient">
     <configuration name="AlexaClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.grpc.task.client.AlexaClient" />
+      <option name="MAIN_CLASS_NAME" value="com.grpc.alexa.client.AlexaClient" />
       <module name="grpc-java-project.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.grpc.task.client.*" />
+          <option name="PATTERN" value="com.grpc.alexa.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,11 +100,11 @@
       </method>
     </configuration>
     <configuration name="AlexaServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.grpc.task.server.AlexaServer" />
+      <option name="MAIN_CLASS_NAME" value="com.grpc.alexa.server.AlexaServer" />
       <module name="grpc-java-project.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.grpc.task.server.*" />
+          <option name="PATTERN" value="com.grpc.alexa.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GreetingClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.grpc.greeting.greeting.client.GreetingClient" />
+    <configuration name="WatchClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.grpc.smart_watch.client.WatchClient" />
       <module name="grpc-java-project.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.grpc.greeting.greeting.client.*" />
+          <option name="PATTERN" value="com.grpc.smart_watch.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +125,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GreetingServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.grpc.greeting.greeting.client.server.GreetingServer" />
+    <configuration name="WatchServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.grpc.smart_watch.server.WatchServer" />
       <module name="grpc-java-project.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.grpc.greeting.greeting.client.server.*" />
+          <option name="PATTERN" value="com.grpc.smart_watch.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AlexaServer" />
-        <item itemvalue="Application.AlexaClient" />
-        <item itemvalue="Application.GreetingClient" />
-        <item itemvalue="Application.GreetingServer" />
+        <item itemvalue="Application.WatchClient" />
+        <item itemvalue="Application.WatchServer" />
         <item itemvalue="Gradle.grpc-java-project [generateProto]" />
+        <item itemvalue="Application.AlexaClient" />
+        <item itemvalue="Application.AlexaServer" />
       </list>
     </recent_temporary>
   </component>
@@ -170,25 +185,33 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="282" y="270" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585414303507" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585430247959">
+    <state x="421" y="98" key="FileChooserDialogImpl" timestamp="1585473499127">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585430247959" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585430247959">
+    <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585473499127" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1585477339368">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585430247959" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585430247959">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585477339368" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1585477339368">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585430247959" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585430247959">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585477339368" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1585477339368">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585430247959" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585477339368" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1585477339368">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585477339368" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1585411868067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585411868067" />
+    <state x="349" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1585472816109">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="349" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585472816109" />
   </component>
 </project>

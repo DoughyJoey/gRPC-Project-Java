@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package smart_watch;
+
+option java_package = "com.proto.smart_watch";
+option java_multiple_files = true;
+
+
+message SleepAverageRequest {
+    int32 number = 1;
+}
+
+message SleepAverageResponse {
+    double average = 1;
+}
+
+service SleepService {
+
+    rpc SleepAverage(stream SleepAverageRequest) returns (SleepAverageResponse) {};
+
+}
