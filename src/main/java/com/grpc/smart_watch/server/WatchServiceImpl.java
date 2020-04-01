@@ -83,4 +83,38 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
             }
         };
     }
+
+    @Override
+    public void calories(CalorieRequest request, StreamObserver<CalorieResponse> responseObserver) {
+        CalorieResponse calorieResponse = CalorieResponse.newBuilder()
+                .setSumResult(request.getFirstNumber() + request.getSecondNumber() +
+                              request.getThirdNumber() + request.getFourthNumber() +
+                              request.getFifthNumber())
+                .build();
+
+        responseObserver.onNext(calorieResponse);
+
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void alarm(AlarmRequest request, StreamObserver<AlarmResponse> responseObserver) {
+        int time = request.getAlarm().getTime();
+
+        try {
+            for (int i = 0; i < time; i++) {
+                String result = "Wake up! You have slept for " + time + "hours ";
+                AlarmResponse response = AlarmResponse.newBuilder()
+                        .setResult(result)
+                        .build();
+
+                responseObserver.onNext(response);
+                Thread.sleep(1000L);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            responseObserver.onCompleted();
+        }
+    }
 }

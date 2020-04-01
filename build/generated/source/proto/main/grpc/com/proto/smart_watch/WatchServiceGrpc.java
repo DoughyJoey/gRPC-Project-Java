@@ -27,6 +27,37 @@ public final class WatchServiceGrpc {
   public static final String SERVICE_NAME = "smart_watch.WatchService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<com.proto.smart_watch.CalorieRequest,
+      com.proto.smart_watch.CalorieResponse> getCaloriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Calories",
+      requestType = com.proto.smart_watch.CalorieRequest.class,
+      responseType = com.proto.smart_watch.CalorieResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.smart_watch.CalorieRequest,
+      com.proto.smart_watch.CalorieResponse> getCaloriesMethod() {
+    io.grpc.MethodDescriptor<com.proto.smart_watch.CalorieRequest, com.proto.smart_watch.CalorieResponse> getCaloriesMethod;
+    if ((getCaloriesMethod = WatchServiceGrpc.getCaloriesMethod) == null) {
+      synchronized (WatchServiceGrpc.class) {
+        if ((getCaloriesMethod = WatchServiceGrpc.getCaloriesMethod) == null) {
+          WatchServiceGrpc.getCaloriesMethod = getCaloriesMethod =
+              io.grpc.MethodDescriptor.<com.proto.smart_watch.CalorieRequest, com.proto.smart_watch.CalorieResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Calories"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.smart_watch.CalorieRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.smart_watch.CalorieResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WatchServiceMethodDescriptorSupplier("Calories"))
+              .build();
+        }
+      }
+    }
+    return getCaloriesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.proto.smart_watch.SleepAverageRequest,
       com.proto.smart_watch.SleepAverageResponse> getSleepAverageMethod;
 
@@ -56,6 +87,37 @@ public final class WatchServiceGrpc {
       }
     }
     return getSleepAverageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.proto.smart_watch.AlarmRequest,
+      com.proto.smart_watch.AlarmResponse> getAlarmMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Alarm",
+      requestType = com.proto.smart_watch.AlarmRequest.class,
+      responseType = com.proto.smart_watch.AlarmResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.smart_watch.AlarmRequest,
+      com.proto.smart_watch.AlarmResponse> getAlarmMethod() {
+    io.grpc.MethodDescriptor<com.proto.smart_watch.AlarmRequest, com.proto.smart_watch.AlarmResponse> getAlarmMethod;
+    if ((getAlarmMethod = WatchServiceGrpc.getAlarmMethod) == null) {
+      synchronized (WatchServiceGrpc.class) {
+        if ((getAlarmMethod = WatchServiceGrpc.getAlarmMethod) == null) {
+          WatchServiceGrpc.getAlarmMethod = getAlarmMethod =
+              io.grpc.MethodDescriptor.<com.proto.smart_watch.AlarmRequest, com.proto.smart_watch.AlarmResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Alarm"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.smart_watch.AlarmRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.smart_watch.AlarmResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WatchServiceMethodDescriptorSupplier("Alarm"))
+              .build();
+        }
+      }
+    }
+    return getAlarmMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.proto.smart_watch.MaxHeartRateRequest,
@@ -139,9 +201,23 @@ public final class WatchServiceGrpc {
 
     /**
      */
+    public void calories(com.proto.smart_watch.CalorieRequest request,
+        io.grpc.stub.StreamObserver<com.proto.smart_watch.CalorieResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCaloriesMethod(), responseObserver);
+    }
+
+    /**
+     */
     public io.grpc.stub.StreamObserver<com.proto.smart_watch.SleepAverageRequest> sleepAverage(
         io.grpc.stub.StreamObserver<com.proto.smart_watch.SleepAverageResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getSleepAverageMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void alarm(com.proto.smart_watch.AlarmRequest request,
+        io.grpc.stub.StreamObserver<com.proto.smart_watch.AlarmResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAlarmMethod(), responseObserver);
     }
 
     /**
@@ -154,12 +230,26 @@ public final class WatchServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
+            getCaloriesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.smart_watch.CalorieRequest,
+                com.proto.smart_watch.CalorieResponse>(
+                  this, METHODID_CALORIES)))
+          .addMethod(
             getSleepAverageMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 com.proto.smart_watch.SleepAverageRequest,
                 com.proto.smart_watch.SleepAverageResponse>(
                   this, METHODID_SLEEP_AVERAGE)))
+          .addMethod(
+            getAlarmMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.proto.smart_watch.AlarmRequest,
+                com.proto.smart_watch.AlarmResponse>(
+                  this, METHODID_ALARM)))
           .addMethod(
             getMaxHeartRateMethod(),
             asyncBidiStreamingCall(
@@ -187,10 +277,26 @@ public final class WatchServiceGrpc {
 
     /**
      */
+    public void calories(com.proto.smart_watch.CalorieRequest request,
+        io.grpc.stub.StreamObserver<com.proto.smart_watch.CalorieResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCaloriesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public io.grpc.stub.StreamObserver<com.proto.smart_watch.SleepAverageRequest> sleepAverage(
         io.grpc.stub.StreamObserver<com.proto.smart_watch.SleepAverageResponse> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getSleepAverageMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public void alarm(com.proto.smart_watch.AlarmRequest request,
+        io.grpc.stub.StreamObserver<com.proto.smart_watch.AlarmResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getAlarmMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -215,6 +321,21 @@ public final class WatchServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new WatchServiceBlockingStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.proto.smart_watch.CalorieResponse calories(com.proto.smart_watch.CalorieRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCaloriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.proto.smart_watch.AlarmResponse> alarm(
+        com.proto.smart_watch.AlarmRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getAlarmMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -230,10 +351,20 @@ public final class WatchServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new WatchServiceFutureStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.smart_watch.CalorieResponse> calories(
+        com.proto.smart_watch.CalorieRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCaloriesMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_SLEEP_AVERAGE = 0;
-  private static final int METHODID_MAX_HEART_RATE = 1;
+  private static final int METHODID_CALORIES = 0;
+  private static final int METHODID_ALARM = 1;
+  private static final int METHODID_SLEEP_AVERAGE = 2;
+  private static final int METHODID_MAX_HEART_RATE = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -252,6 +383,14 @@ public final class WatchServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CALORIES:
+          serviceImpl.calories((com.proto.smart_watch.CalorieRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.smart_watch.CalorieResponse>) responseObserver);
+          break;
+        case METHODID_ALARM:
+          serviceImpl.alarm((com.proto.smart_watch.AlarmRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.smart_watch.AlarmResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -319,7 +458,9 @@ public final class WatchServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new WatchServiceFileDescriptorSupplier())
+              .addMethod(getCaloriesMethod())
               .addMethod(getSleepAverageMethod())
+              .addMethod(getAlarmMethod())
               .addMethod(getMaxHeartRateMethod())
               .build();
         }

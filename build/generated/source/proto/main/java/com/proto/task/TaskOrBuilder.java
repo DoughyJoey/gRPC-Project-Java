@@ -20,24 +20,24 @@ public interface TaskOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string title = 3;</code>
+   * <code>string title = 2;</code>
    * @return The title.
    */
   java.lang.String getTitle();
   /**
-   * <code>string title = 3;</code>
+   * <code>string title = 2;</code>
    * @return The bytes for title.
    */
   com.google.protobuf.ByteString
       getTitleBytes();
 
   /**
-   * <code>string content = 4;</code>
+   * <code>string content = 3;</code>
    * @return The content.
    */
   java.lang.String getContent();
   /**
-   * <code>string content = 4;</code>
+   * <code>string content = 3;</code>
    * @return The bytes for content.
    */
   com.google.protobuf.ByteString

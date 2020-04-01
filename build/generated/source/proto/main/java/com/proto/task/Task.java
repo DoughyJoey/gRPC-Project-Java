@@ -57,13 +57,13 @@ private static final long serialVersionUID = 0L;
             id_ = s;
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             title_ = s;
             break;
           }
-          case 34: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             content_ = s;
@@ -137,10 +137,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TITLE_FIELD_NUMBER = 3;
+  public static final int TITLE_FIELD_NUMBER = 2;
   private volatile java.lang.Object title_;
   /**
-   * <code>string title = 3;</code>
+   * <code>string title = 2;</code>
    * @return The title.
    */
   public java.lang.String getTitle() {
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string title = 3;</code>
+   * <code>string title = 2;</code>
    * @return The bytes for title.
    */
   public com.google.protobuf.ByteString
@@ -173,10 +173,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTENT_FIELD_NUMBER = 4;
+  public static final int CONTENT_FIELD_NUMBER = 3;
   private volatile java.lang.Object content_;
   /**
-   * <code>string content = 4;</code>
+   * <code>string content = 3;</code>
    * @return The content.
    */
   public java.lang.String getContent() {
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string content = 4;</code>
+   * <code>string content = 3;</code>
    * @return The bytes for content.
    */
   public com.google.protobuf.ByteString
@@ -227,10 +227,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (!getTitleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
     }
     if (!getContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, content_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
     }
     unknownFields.writeTo(output);
   }
@@ -245,10 +245,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (!getTitleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
     }
     if (!getContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, content_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -623,7 +623,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object title_ = "";
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 2;</code>
      * @return The title.
      */
     public java.lang.String getTitle() {
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 2;</code>
      * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 2;</code>
      * @param value The title to set.
      * @return This builder for chaining.
      */
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 2;</code>
      * @param value The bytes for title to set.
      * @return This builder for chaining.
      */
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object content_ = "";
     /**
-     * <code>string content = 4;</code>
+     * <code>string content = 3;</code>
      * @return The content.
      */
     public java.lang.String getContent() {
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string content = 4;</code>
+     * <code>string content = 3;</code>
      * @return The bytes for content.
      */
     public com.google.protobuf.ByteString
@@ -732,7 +732,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string content = 4;</code>
+     * <code>string content = 3;</code>
      * @param value The content to set.
      * @return This builder for chaining.
      */
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string content = 4;</code>
+     * <code>string content = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearContent() {
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string content = 4;</code>
+     * <code>string content = 3;</code>
      * @param value The bytes for content to set.
      * @return This builder for chaining.
      */

@@ -89,8 +89,8 @@ public final class TaskOuterClass {
       "task_id\030\001 \001(\t\"%\n\022DeleteTaskResponse\022\017\n\007t" +
       "ask_id\030\001 \001(\t\"\021\n\017ListTaskRequest\",\n\020ListT" +
       "askResponse\022\030\n\004task\030\001 \001(\0132\n.task.Task\"2\n" +
-      "\004Task\022\n\n\002id\030\001 \001(\t\022\r\n\005title\030\003 \001(\t\022\017\n\007cont" +
-      "ent\030\004 \001(\t2\322\002\n\013TaskService\022A\n\nCreateTask\022" +
+      "\004Task\022\n\n\002id\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\017\n\007cont" +
+      "ent\030\003 \001(\t2\322\002\n\013TaskService\022A\n\nCreateTask\022" +
       "\027.task.CreateTaskRequest\032\030.task.CreateTa" +
       "skResponse\"\000\022;\n\010ReadTask\022\025.task.ReadTask" +
       "Request\032\026.task.ReadTaskResponse\"\000\022A\n\nUpd" +

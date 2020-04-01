@@ -24,12 +24,33 @@ public class WatchClient {
                 .usePlaintext()
                 .build();
 
-        doSleepStreamingCall(channel);
-        doHeartRateStreamingCall(channel);
+        //doCalorieCall(channel);
+        //doSleepStreamingCall(channel);
+        doAlarmCall(channel);
+        //doHeartRateStreamingCall(channel);
 
 
         System.out.println("Shutting down channel");
         channel.shutdown();
+
+    }
+
+    private void doCalorieCall(ManagedChannel channel){
+        // created a greet service client (blocking - synchronous)
+
+        WatchServiceGrpc.WatchServiceBlockingStub stub = WatchServiceGrpc.newBlockingStub(channel);
+
+        CalorieRequest request = CalorieRequest.newBuilder()
+                .setFirstNumber(1709)
+                .setSecondNumber(1868)
+                .setThirdNumber(2230)
+                .setFourthNumber(1845)
+                .setFifthNumber(2003)
+                .build();
+
+        CalorieResponse response = stub.calories(request);
+
+        System.out.println("Your total number of calories for the week is = " + response.getSumResult());
 
     }
 
@@ -91,6 +112,24 @@ public class WatchClient {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    private void doAlarmCall(ManagedChannel channel) {
+        WatchServiceGrpc.WatchServiceBlockingStub alarmClient = WatchServiceGrpc.newBlockingStub(channel);
+
+        // Server Streaming
+        // we prepare the request
+        AlarmRequest alarmRequest =
+                AlarmRequest.newBuilder()
+                        .setAlarm(Alarm.newBuilder().setTime(8))
+                        .build();
+
+        // we stream the responses (in a blocking manner)
+        alarmClient.alarm(alarmRequest)
+                .forEachRemaining(alarmResponse -> {
+                    System.out.println(alarmResponse.getResult());
+                });
+
     }
 
     private void doHeartRateStreamingCall(ManagedChannel channel){

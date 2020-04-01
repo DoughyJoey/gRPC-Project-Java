@@ -55,7 +55,7 @@ message ListTaskResponse {
 
 message Task {
     string id = 1;
-    string title = 3;
-    string content = 4;
+    string title = 2;
+    string content = 3;
 }
 
