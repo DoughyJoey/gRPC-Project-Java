@@ -2,40 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19787c98-5fb2-4949-8d8b-022c11c9ba8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/home/client/HomeClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/home/server/HomeServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/home/server/HomeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/proto/home/home.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/smart_watch/WatchServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/smart_watch/WatchServiceGrpc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/smart_watch/Watch.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/smart_watch/Watch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/task/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/task/TaskOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/task/TaskOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/task/TaskOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/task/TaskOuterClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/greeting/client/GreetingClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/greeting/client/GreetingClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/Watch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/Watch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$MethodHandlers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$MethodHandlers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceBaseDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceBaseDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceBlockingStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceBlockingStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceFileDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceFileDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceFutureStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceFutureStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceImplBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceImplBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceMethodDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceMethodDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc$WatchServiceStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/smart_watch/WatchServiceGrpc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/task/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/task/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/task/TaskOuterClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/task/TaskOuterClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/client/WatchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/client/WatchClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/smart_watch/watch.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/smart_watch/watch.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/task/task.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/task/task.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/greeting/client/GreetingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/greeting/client/GreetingClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +84,33 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jmDNS Tutorial Solution" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Application.WatchClient">
+  <component name="RunManager" selected="Application.HomeClient">
+    <configuration name="GreetingClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.grpc.greeting.client.GreetingClient" />
+      <module name="grpc-java-project.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grpc.greeting.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.grpc.home.client.HomeClient" />
+      <module name="grpc-java-project.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grpc.home.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HomeServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.grpc.home.server.HomeServer" />
       <module name="grpc-java-project.main" />
@@ -117,38 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.grpc.light.client.LightClient" />
-      <module name="grpc-java-project.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.grpc.light.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WatchClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.grpc.smart_watch.client.WatchClient" />
       <module name="grpc-java-project.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.grpc.smart_watch.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WatchServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.grpc.smart_watch.server.WatchServer" />
-      <module name="grpc-java-project.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.grpc.smart_watch.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WatchClient" />
-        <item itemvalue="Application.WatchServer" />
+        <item itemvalue="Application.HomeClient" />
         <item itemvalue="Application.HomeServer" />
         <item itemvalue="Gradle.grpc-java-project [generateProto]" />
-        <item itemvalue="Application.LightClient" />
+        <item itemvalue="Application.GreetingClient" />
+        <item itemvalue="Application.WatchClient" />
       </list>
     </recent_temporary>
   </component>
@@ -207,34 +188,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585757685656" />
-    <state width="1237" height="181" key="GridCell.Tab.0.bottom" timestamp="1585771609947">
+    <state width="1237" height="181" key="GridCell.Tab.0.bottom" timestamp="1585846376334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="171" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="181" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585771609947" />
-    <state width="1237" height="181" key="GridCell.Tab.0.center" timestamp="1585771609947">
+    <state width="1237" height="181" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585846376334" />
+    <state width="1237" height="181" key="GridCell.Tab.0.center" timestamp="1585846376334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="171" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="181" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585771609947" />
-    <state width="1237" height="181" key="GridCell.Tab.0.left" timestamp="1585771609946">
+    <state width="1237" height="181" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585846376334" />
+    <state width="1237" height="181" key="GridCell.Tab.0.left" timestamp="1585846376334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="171" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="181" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585771609946" />
-    <state width="1237" height="181" key="GridCell.Tab.0.right" timestamp="1585771609947">
+    <state width="1237" height="181" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585846376334" />
+    <state width="1237" height="181" key="GridCell.Tab.0.right" timestamp="1585846376334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="171" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="181" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585771609947" />
+    <state width="1237" height="181" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585846376334" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1585411868067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585411868067" />
-    <state x="349" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1585757663309">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="-1396" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1585841482099">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1396" y="257" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585741684917" />
-    <state x="349" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585757663309" />
+    <state x="-1396" y="257" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585841482099" />
+    <state x="349" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585820804122" />
   </component>
 </project>

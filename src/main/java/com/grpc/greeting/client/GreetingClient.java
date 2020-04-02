@@ -9,7 +9,7 @@ public class GreetingClient {
     public static void main(String[] args) {
         System.out.println("Hello i am a gRPC client");
 
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50055)
                 .usePlaintext()
                 .build();
 

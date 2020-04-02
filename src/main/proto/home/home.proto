@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package home;
+
+option java_package = "com.proto.home";
+option java_multiple_files = true;
+
+enum TempSentiment {
+    COLD = 0;
+    WARM = 1;
+    HOT = 2;
+}
+
+message Bath {
+    string title = 1;
+    double time = 2;
+    TempSentiment temp_sentiment = 3;
+}
+
+message BathRequest {
+    Bath bath = 1;
+}
+
+message BathResponse {
+    string result = 1;
+}
+
+enum Action {
+    ON = 0;
+    OFF = 1;
+}
+
+message Light {
+    Action light_action = 1;
+}
+
+message LightRequest {
+    Light light = 1;
+}
+
+message LightResponse {
+    string result = 1;
+}
+
+service HomeService {
+
+    rpc Bath(BathRequest) returns (BathResponse);
+
+    rpc Light(stream LightRequest) returns (stream LightResponse) {};
+
+}
