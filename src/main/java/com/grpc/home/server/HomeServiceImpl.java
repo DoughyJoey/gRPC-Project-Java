@@ -83,4 +83,31 @@ public class HomeServiceImpl extends HomeServiceGrpc.HomeServiceImplBase {
             responseObserver.onCompleted();
         }
     }
+
+    @Override
+    public StreamObserver<VacuumRequest> vacuum(StreamObserver<VacuumResponse> responseObserver) {
+        StreamObserver<VacuumRequest> requestObserver = new StreamObserver<VacuumRequest>() {
+            @Override
+            public void onNext(VacuumRequest value) {
+                String result = "Action confirmed: " + value.getVacuum().getAction();
+                VacuumResponse vacuumResponse = VacuumResponse.newBuilder()
+                        .setResult(result)
+                        .build();
+
+                responseObserver.onNext(vacuumResponse);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                // do nothing
+            }
+
+            @Override
+            public void onCompleted() {
+                responseObserver.onCompleted();
+            }
+        };
+
+        return requestObserver;
+    }
 }

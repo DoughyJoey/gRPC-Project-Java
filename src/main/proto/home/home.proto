@@ -62,6 +62,19 @@ message PrinterResponse {
     string result = 1;
 }
 
+message Vacuum {
+    string action = 1;
+}
+
+message VacuumRequest {
+    Vacuum vacuum = 1;
+}
+
+message VacuumResponse {
+    string result = 1;
+}
+
+
 service HomeService {
 
     rpc Bath(BathRequest) returns (BathResponse); // simple
@@ -69,5 +82,7 @@ service HomeService {
     rpc Light(stream LightRequest) returns (LightResponse) {}; // client streaming
 
     rpc Printer(PrinterRequest) returns (stream PrinterResponse) {}; // server streaming
+
+    rpc Vacuum(stream VacuumRequest) returns (stream VacuumResponse) {}; // bidirectional streaming
 
 }

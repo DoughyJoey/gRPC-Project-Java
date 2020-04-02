@@ -120,6 +120,37 @@ public final class HomeServiceGrpc {
     return getPrinterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.home.VacuumRequest,
+      com.proto.home.VacuumResponse> getVacuumMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Vacuum",
+      requestType = com.proto.home.VacuumRequest.class,
+      responseType = com.proto.home.VacuumResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.home.VacuumRequest,
+      com.proto.home.VacuumResponse> getVacuumMethod() {
+    io.grpc.MethodDescriptor<com.proto.home.VacuumRequest, com.proto.home.VacuumResponse> getVacuumMethod;
+    if ((getVacuumMethod = HomeServiceGrpc.getVacuumMethod) == null) {
+      synchronized (HomeServiceGrpc.class) {
+        if ((getVacuumMethod = HomeServiceGrpc.getVacuumMethod) == null) {
+          HomeServiceGrpc.getVacuumMethod = getVacuumMethod =
+              io.grpc.MethodDescriptor.<com.proto.home.VacuumRequest, com.proto.home.VacuumResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Vacuum"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.VacuumRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.VacuumResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HomeServiceMethodDescriptorSupplier("Vacuum"))
+              .build();
+        }
+      }
+    }
+    return getVacuumMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -192,6 +223,13 @@ public final class HomeServiceGrpc {
       asyncUnimplementedUnaryCall(getPrinterMethod(), responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.proto.home.VacuumRequest> vacuum(
+        io.grpc.stub.StreamObserver<com.proto.home.VacuumResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getVacuumMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -215,6 +253,13 @@ public final class HomeServiceGrpc {
                 com.proto.home.PrinterRequest,
                 com.proto.home.PrinterResponse>(
                   this, METHODID_PRINTER)))
+          .addMethod(
+            getVacuumMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.proto.home.VacuumRequest,
+                com.proto.home.VacuumResponse>(
+                  this, METHODID_VACUUM)))
           .build();
     }
   }
@@ -258,6 +303,14 @@ public final class HomeServiceGrpc {
         io.grpc.stub.StreamObserver<com.proto.home.PrinterResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getPrinterMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.proto.home.VacuumRequest> vacuum(
+        io.grpc.stub.StreamObserver<com.proto.home.VacuumResponse> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getVacuumMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -323,6 +376,7 @@ public final class HomeServiceGrpc {
   private static final int METHODID_BATH = 0;
   private static final int METHODID_PRINTER = 1;
   private static final int METHODID_LIGHT = 2;
+  private static final int METHODID_VACUUM = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -362,6 +416,9 @@ public final class HomeServiceGrpc {
         case METHODID_LIGHT:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.light(
               (io.grpc.stub.StreamObserver<com.proto.home.LightResponse>) responseObserver);
+        case METHODID_VACUUM:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.vacuum(
+              (io.grpc.stub.StreamObserver<com.proto.home.VacuumResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -416,6 +473,7 @@ public final class HomeServiceGrpc {
               .addMethod(getBathMethod())
               .addMethod(getLightMethod())
               .addMethod(getPrinterMethod())
+              .addMethod(getVacuumMethod())
               .build();
         }
       }

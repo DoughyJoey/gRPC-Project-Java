@@ -23,9 +23,10 @@ public class HomeClient {
                 .usePlaintext()
                 .build();
 
-        doBathCall(channel);
-        doLightCall(channel);
-        doPrinterCall(channel);
+        //doBathCall(channel);
+        //doLightCall(channel);
+        //doPrinterCall(channel);
+        doVacuumCall(channel);
 
 
         System.out.println("Shutting down channel");
@@ -56,7 +57,6 @@ public class HomeClient {
         System.out.println(bathResponse.getResult());
 
     }
-
 
     private void doLightCall(ManagedChannel channel) {
         // create an asynchronous client
@@ -148,6 +148,54 @@ public class HomeClient {
                 .forEachRemaining(printerResponse -> {
                     System.out.println(printerResponse.getResult());
                 });
+
+    }
+
+    private void doVacuumCall(ManagedChannel channel) {
+        HomeServiceGrpc.HomeServiceStub asyncClient = HomeServiceGrpc.newStub(channel);
+
+        CountDownLatch latch = new CountDownLatch(1);
+
+        StreamObserver<VacuumRequest> requestObserver = asyncClient.vacuum(new StreamObserver<VacuumResponse>() {
+            @Override
+            public void onNext(VacuumResponse value) {
+                System.out.println("Response from server: " + value.getResult());
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                latch.countDown();
+            }
+
+            @Override
+            public void onCompleted() {
+                System.out.println("Server is done sending data");
+                latch.countDown();
+            }
+        });
+
+        Arrays.asList("Turn on", "Clean bathroom", "Clean Kitchen", "Turn left", "Power off").forEach(
+                name -> {
+                    System.out.println("Request send to vacuum: " + name);
+                    requestObserver.onNext(VacuumRequest.newBuilder()
+                            .setVacuum(Vacuum.newBuilder()
+                                    .setAction(name))
+                            .build());
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+        );
+
+        requestObserver.onCompleted();
+
+        try {
+            latch.await(3, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
