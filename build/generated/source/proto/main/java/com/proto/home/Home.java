@@ -44,6 +44,21 @@ public final class Home {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_home_LightResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_home_Printer_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_home_Printer_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_home_PrinterRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_home_PrinterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_home_PrinterResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_home_PrinterResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -60,12 +75,20 @@ public final class Home {
       "se\022\016\n\006result\030\001 \001(\t\"+\n\005Light\022\"\n\014light_act" +
       "ion\030\001 \001(\0162\014.home.Action\"*\n\014LightRequest\022" +
       "\032\n\005light\030\001 \001(\0132\013.home.Light\"\037\n\rLightResp" +
-      "onse\022\016\n\006result\030\001 \001(\t*,\n\rTempSentiment\022\010\n" +
-      "\004COLD\020\000\022\010\n\004WARM\020\001\022\007\n\003HOT\020\002*\031\n\006Action\022\006\n\002" +
-      "ON\020\000\022\007\n\003OFF\020\0012r\n\013HomeService\022-\n\004Bath\022\021.h" +
-      "ome.BathRequest\032\022.home.BathResponse\0224\n\005L" +
-      "ight\022\022.home.LightRequest\032\023.home.LightRes" +
-      "ponse\"\000(\001B\022\n\016com.proto.homeP\001b\006proto3"
+      "onse\022\016\n\006result\030\001 \001(\t\"d\n\007Printer\022\014\n\004name\030" +
+      "\001 \001(\t\022\020\n\010document\030\002 \001(\t\022\021\n\tnum_pages\030\003 \001" +
+      "(\005\022&\n\013orientation\030\004 \001(\0162\021.home.Orientati" +
+      "on\"0\n\016PrinterRequest\022\036\n\007printer\030\001 \001(\0132\r." +
+      "home.Printer\"!\n\017PrinterResponse\022\016\n\006resul" +
+      "t\030\001 \001(\t*,\n\rTempSentiment\022\010\n\004COLD\020\000\022\010\n\004WA" +
+      "RM\020\001\022\007\n\003HOT\020\002*\031\n\006Action\022\006\n\002ON\020\000\022\007\n\003OFF\020\001" +
+      "**\n\013Orientation\022\014\n\010PORTRAIT\020\000\022\r\n\tLANDSCA" +
+      "PE\020\0012\256\001\n\013HomeService\022-\n\004Bath\022\021.home.Bath" +
+      "Request\032\022.home.BathResponse\0224\n\005Light\022\022.h" +
+      "ome.LightRequest\032\023.home.LightResponse\"\000(" +
+      "\001\022:\n\007Printer\022\024.home.PrinterRequest\032\025.hom" +
+      "e.PrinterResponse\"\0000\001B\022\n\016com.proto.homeP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -106,6 +129,24 @@ public final class Home {
     internal_static_home_LightResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_home_LightResponse_descriptor,
+        new java.lang.String[] { "Result", });
+    internal_static_home_Printer_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_home_Printer_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_home_Printer_descriptor,
+        new java.lang.String[] { "Name", "Document", "NumPages", "Orientation", });
+    internal_static_home_PrinterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_home_PrinterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_home_PrinterRequest_descriptor,
+        new java.lang.String[] { "Printer", });
+    internal_static_home_PrinterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_home_PrinterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_home_PrinterResponse_descriptor,
         new java.lang.String[] { "Result", });
   }
 

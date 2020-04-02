@@ -42,10 +42,32 @@ message LightResponse {
     string result = 1;
 }
 
+enum Orientation {
+    PORTRAIT = 0;
+    LANDSCAPE = 1;
+}
+
+message Printer {
+    string name = 1;
+    string document = 2;
+    int32 num_pages = 3;
+    Orientation orientation = 4;
+}
+
+message PrinterRequest {
+    Printer printer = 1;
+}
+
+message PrinterResponse {
+    string result = 1;
+}
+
 service HomeService {
 
-    rpc Bath(BathRequest) returns (BathResponse);
+    rpc Bath(BathRequest) returns (BathResponse); // simple
 
-    rpc Light(stream LightRequest) returns (LightResponse) {};
+    rpc Light(stream LightRequest) returns (LightResponse) {}; // client streaming
+
+    rpc Printer(PrinterRequest) returns (stream PrinterResponse) {}; // server streaming
 
 }

@@ -25,6 +25,7 @@ public class HomeClient {
 
         doBathCall(channel);
         doLightCall(channel);
+        doPrinterCall(channel);
 
 
         System.out.println("Shutting down channel");
@@ -126,6 +127,28 @@ public class HomeClient {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    private void doPrinterCall(ManagedChannel channel) {
+        HomeServiceGrpc.HomeServiceBlockingStub printClient = HomeServiceGrpc.newBlockingStub(channel);
+
+        // Server Streaming
+        // we prepare the request
+        PrinterRequest printerRequest =
+                PrinterRequest.newBuilder()
+                        .setPrinter(Printer.newBuilder()
+                                .setName("HP ENVY 1450")
+                                .setDocument("Distributed Systems Report")
+                                .setNumPages(10)
+                                .setOrientation(Orientation.PORTRAIT))
+                        .build();
+
+        // we stream the responses (in a blocking manner)
+        printClient.printer(printerRequest)
+                .forEachRemaining(printerResponse -> {
+                    System.out.println(printerResponse.getResult());
+                });
+
     }
 
 }

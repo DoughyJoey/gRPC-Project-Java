@@ -89,6 +89,37 @@ public final class HomeServiceGrpc {
     return getLightMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.home.PrinterRequest,
+      com.proto.home.PrinterResponse> getPrinterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Printer",
+      requestType = com.proto.home.PrinterRequest.class,
+      responseType = com.proto.home.PrinterResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.home.PrinterRequest,
+      com.proto.home.PrinterResponse> getPrinterMethod() {
+    io.grpc.MethodDescriptor<com.proto.home.PrinterRequest, com.proto.home.PrinterResponse> getPrinterMethod;
+    if ((getPrinterMethod = HomeServiceGrpc.getPrinterMethod) == null) {
+      synchronized (HomeServiceGrpc.class) {
+        if ((getPrinterMethod = HomeServiceGrpc.getPrinterMethod) == null) {
+          HomeServiceGrpc.getPrinterMethod = getPrinterMethod =
+              io.grpc.MethodDescriptor.<com.proto.home.PrinterRequest, com.proto.home.PrinterResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Printer"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.PrinterRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.PrinterResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HomeServiceMethodDescriptorSupplier("Printer"))
+              .build();
+        }
+      }
+    }
+    return getPrinterMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,9 @@ public final class HomeServiceGrpc {
   public static abstract class HomeServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * simple
+     * </pre>
      */
     public void bath(com.proto.home.BathRequest request,
         io.grpc.stub.StreamObserver<com.proto.home.BathResponse> responseObserver) {
@@ -149,6 +183,13 @@ public final class HomeServiceGrpc {
     public io.grpc.stub.StreamObserver<com.proto.home.LightRequest> light(
         io.grpc.stub.StreamObserver<com.proto.home.LightResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getLightMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void printer(com.proto.home.PrinterRequest request,
+        io.grpc.stub.StreamObserver<com.proto.home.PrinterResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPrinterMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -167,6 +208,13 @@ public final class HomeServiceGrpc {
                 com.proto.home.LightRequest,
                 com.proto.home.LightResponse>(
                   this, METHODID_LIGHT)))
+          .addMethod(
+            getPrinterMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.proto.home.PrinterRequest,
+                com.proto.home.PrinterResponse>(
+                  this, METHODID_PRINTER)))
           .build();
     }
   }
@@ -186,6 +234,9 @@ public final class HomeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * simple
+     * </pre>
      */
     public void bath(com.proto.home.BathRequest request,
         io.grpc.stub.StreamObserver<com.proto.home.BathResponse> responseObserver) {
@@ -199,6 +250,14 @@ public final class HomeServiceGrpc {
         io.grpc.stub.StreamObserver<com.proto.home.LightResponse> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getLightMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public void printer(com.proto.home.PrinterRequest request,
+        io.grpc.stub.StreamObserver<com.proto.home.PrinterResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getPrinterMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -217,10 +276,21 @@ public final class HomeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * simple
+     * </pre>
      */
     public com.proto.home.BathResponse bath(com.proto.home.BathRequest request) {
       return blockingUnaryCall(
           getChannel(), getBathMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.proto.home.PrinterResponse> printer(
+        com.proto.home.PrinterRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getPrinterMethod(), getCallOptions(), request);
     }
   }
 
@@ -239,6 +309,9 @@ public final class HomeServiceGrpc {
     }
 
     /**
+     * <pre>
+     * simple
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.proto.home.BathResponse> bath(
         com.proto.home.BathRequest request) {
@@ -248,7 +321,8 @@ public final class HomeServiceGrpc {
   }
 
   private static final int METHODID_BATH = 0;
-  private static final int METHODID_LIGHT = 1;
+  private static final int METHODID_PRINTER = 1;
+  private static final int METHODID_LIGHT = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -270,6 +344,10 @@ public final class HomeServiceGrpc {
         case METHODID_BATH:
           serviceImpl.bath((com.proto.home.BathRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.home.BathResponse>) responseObserver);
+          break;
+        case METHODID_PRINTER:
+          serviceImpl.printer((com.proto.home.PrinterRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.home.PrinterResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -337,6 +415,7 @@ public final class HomeServiceGrpc {
               .setSchemaDescriptor(new HomeServiceFileDescriptorSupplier())
               .addMethod(getBathMethod())
               .addMethod(getLightMethod())
+              .addMethod(getPrinterMethod())
               .build();
         }
       }

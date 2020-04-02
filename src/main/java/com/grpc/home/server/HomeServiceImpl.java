@@ -59,4 +59,28 @@ public class HomeServiceImpl extends HomeServiceGrpc.HomeServiceImplBase {
 
         return requestObserver;
     }
+
+    @Override
+    public void printer(PrinterRequest request, StreamObserver<PrinterResponse> responseObserver) {
+        String name = request.getPrinter().getName();
+        String document = request.getPrinter().getDocument();
+        int num_pages = request.getPrinter().getNumPages();
+        Orientation orientation = request.getPrinter().getOrientation();
+
+        try {
+            for (int i = 0; i <= num_pages; i++) {
+                String result = " Name: " + name + "\n Document: " + document + "\n Orientation: " + orientation + "\n Printing Page: " + i;
+                PrinterResponse response = PrinterResponse.newBuilder()
+                        .setResult(result)
+                        .build();
+
+                responseObserver.onNext(response);
+                Thread.sleep(1000L);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            responseObserver.onCompleted();
+        }
+    }
 }
