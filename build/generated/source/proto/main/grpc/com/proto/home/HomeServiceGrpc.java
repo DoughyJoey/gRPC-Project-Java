@@ -58,6 +58,37 @@ public final class HomeServiceGrpc {
     return getBathMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.home.LightRequest,
+      com.proto.home.LightResponse> getLightMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Light",
+      requestType = com.proto.home.LightRequest.class,
+      responseType = com.proto.home.LightResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.home.LightRequest,
+      com.proto.home.LightResponse> getLightMethod() {
+    io.grpc.MethodDescriptor<com.proto.home.LightRequest, com.proto.home.LightResponse> getLightMethod;
+    if ((getLightMethod = HomeServiceGrpc.getLightMethod) == null) {
+      synchronized (HomeServiceGrpc.class) {
+        if ((getLightMethod = HomeServiceGrpc.getLightMethod) == null) {
+          HomeServiceGrpc.getLightMethod = getLightMethod =
+              io.grpc.MethodDescriptor.<com.proto.home.LightRequest, com.proto.home.LightResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Light"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.LightRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.LightResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HomeServiceMethodDescriptorSupplier("Light"))
+              .build();
+        }
+      }
+    }
+    return getLightMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -113,6 +144,13 @@ public final class HomeServiceGrpc {
       asyncUnimplementedUnaryCall(getBathMethod(), responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.proto.home.LightRequest> light(
+        io.grpc.stub.StreamObserver<com.proto.home.LightResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getLightMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -122,6 +160,13 @@ public final class HomeServiceGrpc {
                 com.proto.home.BathRequest,
                 com.proto.home.BathResponse>(
                   this, METHODID_BATH)))
+          .addMethod(
+            getLightMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.proto.home.LightRequest,
+                com.proto.home.LightResponse>(
+                  this, METHODID_LIGHT)))
           .build();
     }
   }
@@ -146,6 +191,14 @@ public final class HomeServiceGrpc {
         io.grpc.stub.StreamObserver<com.proto.home.BathResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getBathMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.proto.home.LightRequest> light(
+        io.grpc.stub.StreamObserver<com.proto.home.LightResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getLightMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -195,6 +248,7 @@ public final class HomeServiceGrpc {
   }
 
   private static final int METHODID_BATH = 0;
+  private static final int METHODID_LIGHT = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -227,6 +281,9 @@ public final class HomeServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIGHT:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.light(
+              (io.grpc.stub.StreamObserver<com.proto.home.LightResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -279,6 +336,7 @@ public final class HomeServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HomeServiceFileDescriptorSupplier())
               .addMethod(getBathMethod())
+              .addMethod(getLightMethod())
               .build();
         }
       }

@@ -29,6 +29,21 @@ public final class Home {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_home_BathResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_home_Light_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_home_Light_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_home_LightRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_home_LightRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_home_LightResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_home_LightResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -42,10 +57,15 @@ public final class Home {
       "\030\001 \001(\t\022\014\n\004time\030\002 \001(\001\022+\n\016temp_sentiment\030\003" +
       " \001(\0162\023.home.TempSentiment\"\'\n\013BathRequest" +
       "\022\030\n\004bath\030\001 \001(\0132\n.home.Bath\"\036\n\014BathRespon" +
-      "se\022\016\n\006result\030\001 \001(\t*,\n\rTempSentiment\022\010\n\004C" +
-      "OLD\020\000\022\010\n\004WARM\020\001\022\007\n\003HOT\020\0022<\n\013HomeService\022" +
-      "-\n\004Bath\022\021.home.BathRequest\032\022.home.BathRe" +
-      "sponseB\022\n\016com.proto.homeP\001b\006proto3"
+      "se\022\016\n\006result\030\001 \001(\t\"+\n\005Light\022\"\n\014light_act" +
+      "ion\030\001 \001(\0162\014.home.Action\"*\n\014LightRequest\022" +
+      "\032\n\005light\030\001 \001(\0132\013.home.Light\"\037\n\rLightResp" +
+      "onse\022\016\n\006result\030\001 \001(\t*,\n\rTempSentiment\022\010\n" +
+      "\004COLD\020\000\022\010\n\004WARM\020\001\022\007\n\003HOT\020\002*\031\n\006Action\022\006\n\002" +
+      "ON\020\000\022\007\n\003OFF\020\0012r\n\013HomeService\022-\n\004Bath\022\021.h" +
+      "ome.BathRequest\032\022.home.BathResponse\0224\n\005L" +
+      "ight\022\022.home.LightRequest\032\023.home.LightRes" +
+      "ponse\"\000(\001B\022\n\016com.proto.homeP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -68,6 +88,24 @@ public final class Home {
     internal_static_home_BathResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_home_BathResponse_descriptor,
+        new java.lang.String[] { "Result", });
+    internal_static_home_Light_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_home_Light_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_home_Light_descriptor,
+        new java.lang.String[] { "LightAction", });
+    internal_static_home_LightRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_home_LightRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_home_LightRequest_descriptor,
+        new java.lang.String[] { "Light", });
+    internal_static_home_LightResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_home_LightResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_home_LightResponse_descriptor,
         new java.lang.String[] { "Result", });
   }
 

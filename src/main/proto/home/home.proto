@@ -46,6 +46,6 @@ service HomeService {
 
     rpc Bath(BathRequest) returns (BathResponse);
 
-    rpc Light(stream LightRequest) returns (stream LightResponse) {};
+    rpc Light(stream LightRequest) returns (LightResponse) {};
 
 }
