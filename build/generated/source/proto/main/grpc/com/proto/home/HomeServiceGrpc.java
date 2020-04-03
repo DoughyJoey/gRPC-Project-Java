@@ -151,6 +151,37 @@ public final class HomeServiceGrpc {
     return getVacuumMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.home.VacuumWithDeadlineRequest,
+      com.proto.home.VacuumWithDeadlineResponse> getVacuumWithDeadlineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VacuumWithDeadline",
+      requestType = com.proto.home.VacuumWithDeadlineRequest.class,
+      responseType = com.proto.home.VacuumWithDeadlineResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.home.VacuumWithDeadlineRequest,
+      com.proto.home.VacuumWithDeadlineResponse> getVacuumWithDeadlineMethod() {
+    io.grpc.MethodDescriptor<com.proto.home.VacuumWithDeadlineRequest, com.proto.home.VacuumWithDeadlineResponse> getVacuumWithDeadlineMethod;
+    if ((getVacuumWithDeadlineMethod = HomeServiceGrpc.getVacuumWithDeadlineMethod) == null) {
+      synchronized (HomeServiceGrpc.class) {
+        if ((getVacuumWithDeadlineMethod = HomeServiceGrpc.getVacuumWithDeadlineMethod) == null) {
+          HomeServiceGrpc.getVacuumWithDeadlineMethod = getVacuumWithDeadlineMethod =
+              io.grpc.MethodDescriptor.<com.proto.home.VacuumWithDeadlineRequest, com.proto.home.VacuumWithDeadlineResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VacuumWithDeadline"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.VacuumWithDeadlineRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.home.VacuumWithDeadlineResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HomeServiceMethodDescriptorSupplier("VacuumWithDeadline"))
+              .build();
+        }
+      }
+    }
+    return getVacuumWithDeadlineMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -230,6 +261,13 @@ public final class HomeServiceGrpc {
       return asyncUnimplementedStreamingCall(getVacuumMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void vacuumWithDeadline(com.proto.home.VacuumWithDeadlineRequest request,
+        io.grpc.stub.StreamObserver<com.proto.home.VacuumWithDeadlineResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getVacuumWithDeadlineMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -260,6 +298,13 @@ public final class HomeServiceGrpc {
                 com.proto.home.VacuumRequest,
                 com.proto.home.VacuumResponse>(
                   this, METHODID_VACUUM)))
+          .addMethod(
+            getVacuumWithDeadlineMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.home.VacuumWithDeadlineRequest,
+                com.proto.home.VacuumWithDeadlineResponse>(
+                  this, METHODID_VACUUM_WITH_DEADLINE)))
           .build();
     }
   }
@@ -312,6 +357,14 @@ public final class HomeServiceGrpc {
       return asyncBidiStreamingCall(
           getChannel().newCall(getVacuumMethod(), getCallOptions()), responseObserver);
     }
+
+    /**
+     */
+    public void vacuumWithDeadline(com.proto.home.VacuumWithDeadlineRequest request,
+        io.grpc.stub.StreamObserver<com.proto.home.VacuumWithDeadlineResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getVacuumWithDeadlineMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -345,6 +398,13 @@ public final class HomeServiceGrpc {
       return blockingServerStreamingCall(
           getChannel(), getPrinterMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.proto.home.VacuumWithDeadlineResponse vacuumWithDeadline(com.proto.home.VacuumWithDeadlineRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getVacuumWithDeadlineMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -371,12 +431,21 @@ public final class HomeServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getBathMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.home.VacuumWithDeadlineResponse> vacuumWithDeadline(
+        com.proto.home.VacuumWithDeadlineRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getVacuumWithDeadlineMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_BATH = 0;
   private static final int METHODID_PRINTER = 1;
-  private static final int METHODID_LIGHT = 2;
-  private static final int METHODID_VACUUM = 3;
+  private static final int METHODID_VACUUM_WITH_DEADLINE = 2;
+  private static final int METHODID_LIGHT = 3;
+  private static final int METHODID_VACUUM = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -402,6 +471,10 @@ public final class HomeServiceGrpc {
         case METHODID_PRINTER:
           serviceImpl.printer((com.proto.home.PrinterRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.home.PrinterResponse>) responseObserver);
+          break;
+        case METHODID_VACUUM_WITH_DEADLINE:
+          serviceImpl.vacuumWithDeadline((com.proto.home.VacuumWithDeadlineRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.home.VacuumWithDeadlineResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -474,6 +547,7 @@ public final class HomeServiceGrpc {
               .addMethod(getLightMethod())
               .addMethod(getPrinterMethod())
               .addMethod(getVacuumMethod())
+              .addMethod(getVacuumWithDeadlineMethod())
               .build();
         }
       }

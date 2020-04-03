@@ -11,6 +11,17 @@ enum TempSentiment {
     HOT = 2;
 }
 
+enum Orientation {
+    PORTRAIT = 0;
+    LANDSCAPE = 1;
+}
+
+enum Action {
+    ON = 0;
+    OFF = 1;
+}
+
+// BATH
 message Bath {
     string title = 1;
     double time = 2;
@@ -25,11 +36,7 @@ message BathResponse {
     string result = 1;
 }
 
-enum Action {
-    ON = 0;
-    OFF = 1;
-}
-
+// LIGHT
 message Light {
     Action light_action = 1;
 }
@@ -42,11 +49,7 @@ message LightResponse {
     string result = 1;
 }
 
-enum Orientation {
-    PORTRAIT = 0;
-    LANDSCAPE = 1;
-}
-
+// PRINTER
 message Printer {
     string name = 1;
     string document = 2;
@@ -62,6 +65,7 @@ message PrinterResponse {
     string result = 1;
 }
 
+// VACUUM
 message Vacuum {
     string action = 1;
 }
@@ -74,6 +78,13 @@ message VacuumResponse {
     string result = 1;
 }
 
+message VacuumWithDeadlineRequest {
+    Vacuum vacuum = 1;
+}
+
+message VacuumWithDeadlineResponse {
+    string result = 1;
+}
 
 service HomeService {
 
@@ -84,5 +95,7 @@ service HomeService {
     rpc Printer(PrinterRequest) returns (stream PrinterResponse) {}; // server streaming
 
     rpc Vacuum(stream VacuumRequest) returns (stream VacuumResponse) {}; // bidirectional streaming
+
+    rpc VacuumWithDeadline(VacuumWithDeadlineRequest) returns (VacuumWithDeadlineResponse) {}; // simple stream with deadline
 
 }

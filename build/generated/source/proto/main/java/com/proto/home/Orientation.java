@@ -81,7 +81,7 @@ public enum Orientation
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.proto.home.Home.getDescriptor().getEnumTypes().get(2);
+    return com.proto.home.Home.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final Orientation[] VALUES = values();

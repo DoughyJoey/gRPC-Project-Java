@@ -1,6 +1,7 @@
 package com.grpc.home.server;
 
 import com.proto.home.*;
+import io.grpc.Context;
 import io.grpc.stub.StreamObserver;
 
 public class HomeServiceImpl extends HomeServiceGrpc.HomeServiceImplBase {
@@ -109,5 +110,33 @@ public class HomeServiceImpl extends HomeServiceGrpc.HomeServiceImplBase {
         };
 
         return requestObserver;
+    }
+
+    @Override
+    public void vacuumWithDeadline(VacuumWithDeadlineRequest request, StreamObserver<VacuumWithDeadlineResponse> responseObserver) {
+        Context current = Context.current();
+
+        try {
+
+            for (int i = 0; i < 3; i++) {
+                if (!current.isCancelled()) {
+                    System.out.println("sleep for 100 ms");
+                    Thread.sleep(100);
+                } else {
+                    return;
+                }
+            }
+
+            System.out.println("send response");
+            responseObserver.onNext(
+                    VacuumWithDeadlineResponse.newBuilder()
+                            .setResult("Action: " + request.getVacuum().getAction())
+                            .build()
+            );
+
+            responseObserver.onCompleted();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -4,30 +4,26 @@
 package com.proto.home;
 
 /**
- * <pre>
- * VACUUM
- * </pre>
- *
- * Protobuf type {@code home.Vacuum}
+ * Protobuf type {@code home.VacuumWithDeadlineResponse}
  */
-public  final class Vacuum extends
+public  final class VacuumWithDeadlineResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:home.Vacuum)
-    VacuumOrBuilder {
+    // @@protoc_insertion_point(message_implements:home.VacuumWithDeadlineResponse)
+    VacuumWithDeadlineResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Vacuum.newBuilder() to construct.
-  private Vacuum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use VacuumWithDeadlineResponse.newBuilder() to construct.
+  private VacuumWithDeadlineResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Vacuum() {
-    action_ = "";
+  private VacuumWithDeadlineResponse() {
+    result_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new Vacuum();
+    return new VacuumWithDeadlineResponse();
   }
 
   @java.lang.Override
@@ -35,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Vacuum(
+  private VacuumWithDeadlineResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -56,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            action_ = s;
+            result_ = s;
             break;
           }
           default: {
@@ -80,47 +76,47 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.proto.home.Home.internal_static_home_Vacuum_descriptor;
+    return com.proto.home.Home.internal_static_home_VacuumWithDeadlineResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.proto.home.Home.internal_static_home_Vacuum_fieldAccessorTable
+    return com.proto.home.Home.internal_static_home_VacuumWithDeadlineResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.proto.home.Vacuum.class, com.proto.home.Vacuum.Builder.class);
+            com.proto.home.VacuumWithDeadlineResponse.class, com.proto.home.VacuumWithDeadlineResponse.Builder.class);
   }
 
-  public static final int ACTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object action_;
+  public static final int RESULT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object result_;
   /**
-   * <code>string action = 1;</code>
-   * @return The action.
+   * <code>string result = 1;</code>
+   * @return The result.
    */
-  public java.lang.String getAction() {
-    java.lang.Object ref = action_;
+  public java.lang.String getResult() {
+    java.lang.Object ref = result_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      action_ = s;
+      result_ = s;
       return s;
     }
   }
   /**
-   * <code>string action = 1;</code>
-   * @return The bytes for action.
+   * <code>string result = 1;</code>
+   * @return The bytes for result.
    */
   public com.google.protobuf.ByteString
-      getActionBytes() {
-    java.lang.Object ref = action_;
+      getResultBytes() {
+    java.lang.Object ref = result_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      action_ = b;
+      result_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -141,8 +137,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getActionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, action_);
+    if (!getResultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
     }
     unknownFields.writeTo(output);
   }
@@ -153,8 +149,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getActionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, action_);
+    if (!getResultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -166,13 +162,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.proto.home.Vacuum)) {
+    if (!(obj instanceof com.proto.home.VacuumWithDeadlineResponse)) {
       return super.equals(obj);
     }
-    com.proto.home.Vacuum other = (com.proto.home.Vacuum) obj;
+    com.proto.home.VacuumWithDeadlineResponse other = (com.proto.home.VacuumWithDeadlineResponse) obj;
 
-    if (!getAction()
-        .equals(other.getAction())) return false;
+    if (!getResult()
+        .equals(other.getResult())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,76 +180,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + getAction().hashCode();
+    hash = (37 * hash) + RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getResult().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.home.Vacuum parseFrom(byte[] data)
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.home.Vacuum parseFrom(java.io.InputStream input)
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.home.Vacuum parseDelimitedFrom(java.io.InputStream input)
+  public static com.proto.home.VacuumWithDeadlineResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.proto.home.Vacuum parseDelimitedFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.home.Vacuum parseFrom(
+  public static com.proto.home.VacuumWithDeadlineResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -266,7 +262,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.proto.home.Vacuum prototype) {
+  public static Builder newBuilder(com.proto.home.VacuumWithDeadlineResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -282,30 +278,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * VACUUM
-   * </pre>
-   *
-   * Protobuf type {@code home.Vacuum}
+   * Protobuf type {@code home.VacuumWithDeadlineResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:home.Vacuum)
-      com.proto.home.VacuumOrBuilder {
+      // @@protoc_insertion_point(builder_implements:home.VacuumWithDeadlineResponse)
+      com.proto.home.VacuumWithDeadlineResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.proto.home.Home.internal_static_home_Vacuum_descriptor;
+      return com.proto.home.Home.internal_static_home_VacuumWithDeadlineResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.proto.home.Home.internal_static_home_Vacuum_fieldAccessorTable
+      return com.proto.home.Home.internal_static_home_VacuumWithDeadlineResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.proto.home.Vacuum.class, com.proto.home.Vacuum.Builder.class);
+              com.proto.home.VacuumWithDeadlineResponse.class, com.proto.home.VacuumWithDeadlineResponse.Builder.class);
     }
 
-    // Construct using com.proto.home.Vacuum.newBuilder()
+    // Construct using com.proto.home.VacuumWithDeadlineResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -323,7 +315,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      action_ = "";
+      result_ = "";
 
       return this;
     }
@@ -331,17 +323,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.proto.home.Home.internal_static_home_Vacuum_descriptor;
+      return com.proto.home.Home.internal_static_home_VacuumWithDeadlineResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.proto.home.Vacuum getDefaultInstanceForType() {
-      return com.proto.home.Vacuum.getDefaultInstance();
+    public com.proto.home.VacuumWithDeadlineResponse getDefaultInstanceForType() {
+      return com.proto.home.VacuumWithDeadlineResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.proto.home.Vacuum build() {
-      com.proto.home.Vacuum result = buildPartial();
+    public com.proto.home.VacuumWithDeadlineResponse build() {
+      com.proto.home.VacuumWithDeadlineResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -349,9 +341,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.home.Vacuum buildPartial() {
-      com.proto.home.Vacuum result = new com.proto.home.Vacuum(this);
-      result.action_ = action_;
+    public com.proto.home.VacuumWithDeadlineResponse buildPartial() {
+      com.proto.home.VacuumWithDeadlineResponse result = new com.proto.home.VacuumWithDeadlineResponse(this);
+      result.result_ = result_;
       onBuilt();
       return result;
     }
@@ -390,18 +382,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.proto.home.Vacuum) {
-        return mergeFrom((com.proto.home.Vacuum)other);
+      if (other instanceof com.proto.home.VacuumWithDeadlineResponse) {
+        return mergeFrom((com.proto.home.VacuumWithDeadlineResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.proto.home.Vacuum other) {
-      if (other == com.proto.home.Vacuum.getDefaultInstance()) return this;
-      if (!other.getAction().isEmpty()) {
-        action_ = other.action_;
+    public Builder mergeFrom(com.proto.home.VacuumWithDeadlineResponse other) {
+      if (other == com.proto.home.VacuumWithDeadlineResponse.getDefaultInstance()) return this;
+      if (!other.getResult().isEmpty()) {
+        result_ = other.result_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -419,11 +411,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.proto.home.Vacuum parsedMessage = null;
+      com.proto.home.VacuumWithDeadlineResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.proto.home.Vacuum) e.getUnfinishedMessage();
+        parsedMessage = (com.proto.home.VacuumWithDeadlineResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -433,78 +425,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object action_ = "";
+    private java.lang.Object result_ = "";
     /**
-     * <code>string action = 1;</code>
-     * @return The action.
+     * <code>string result = 1;</code>
+     * @return The result.
      */
-    public java.lang.String getAction() {
-      java.lang.Object ref = action_;
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        action_ = s;
+        result_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string action = 1;</code>
-     * @return The bytes for action.
+     * <code>string result = 1;</code>
+     * @return The bytes for result.
      */
     public com.google.protobuf.ByteString
-        getActionBytes() {
-      java.lang.Object ref = action_;
+        getResultBytes() {
+      java.lang.Object ref = result_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        action_ = b;
+        result_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string action = 1;</code>
-     * @param value The action to set.
+     * <code>string result = 1;</code>
+     * @param value The result to set.
      * @return This builder for chaining.
      */
-    public Builder setAction(
+    public Builder setResult(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      action_ = value;
+      result_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string action = 1;</code>
+     * <code>string result = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAction() {
+    public Builder clearResult() {
       
-      action_ = getDefaultInstance().getAction();
+      result_ = getDefaultInstance().getResult();
       onChanged();
       return this;
     }
     /**
-     * <code>string action = 1;</code>
-     * @param value The bytes for action to set.
+     * <code>string result = 1;</code>
+     * @param value The bytes for result to set.
      * @return This builder for chaining.
      */
-    public Builder setActionBytes(
+    public Builder setResultBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      action_ = value;
+      result_ = value;
       onChanged();
       return this;
     }
@@ -521,41 +513,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:home.Vacuum)
+    // @@protoc_insertion_point(builder_scope:home.VacuumWithDeadlineResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:home.Vacuum)
-  private static final com.proto.home.Vacuum DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:home.VacuumWithDeadlineResponse)
+  private static final com.proto.home.VacuumWithDeadlineResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.proto.home.Vacuum();
+    DEFAULT_INSTANCE = new com.proto.home.VacuumWithDeadlineResponse();
   }
 
-  public static com.proto.home.Vacuum getDefaultInstance() {
+  public static com.proto.home.VacuumWithDeadlineResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Vacuum>
-      PARSER = new com.google.protobuf.AbstractParser<Vacuum>() {
+  private static final com.google.protobuf.Parser<VacuumWithDeadlineResponse>
+      PARSER = new com.google.protobuf.AbstractParser<VacuumWithDeadlineResponse>() {
     @java.lang.Override
-    public Vacuum parsePartialFrom(
+    public VacuumWithDeadlineResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Vacuum(input, extensionRegistry);
+      return new VacuumWithDeadlineResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<Vacuum> parser() {
+  public static com.google.protobuf.Parser<VacuumWithDeadlineResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Vacuum> getParserForType() {
+  public com.google.protobuf.Parser<VacuumWithDeadlineResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.proto.home.Vacuum getDefaultInstanceForType() {
+  public com.proto.home.VacuumWithDeadlineResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -4,6 +4,10 @@
 package com.proto.home;
 
 /**
+ * <pre>
+ * LIGHT
+ * </pre>
+ *
  * Protobuf type {@code home.Light}
  */
 public  final class Light extends
@@ -261,6 +265,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * LIGHT
+   * </pre>
+   *
    * Protobuf type {@code home.Light}
    */
   public static final class Builder extends

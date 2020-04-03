@@ -4,6 +4,10 @@
 package com.proto.home;
 
 /**
+ * <pre>
+ * PRINTER
+ * </pre>
+ *
  * Protobuf type {@code home.Printer}
  */
 public  final class Printer extends
@@ -393,6 +397,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * PRINTER
+   * </pre>
+   *
    * Protobuf type {@code home.Printer}
    */
   public static final class Builder extends

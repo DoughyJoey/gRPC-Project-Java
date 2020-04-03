@@ -4,6 +4,10 @@
 package com.proto.home;
 
 /**
+ * <pre>
+ * BATH
+ * </pre>
+ *
  * Protobuf type {@code home.Bath}
  */
 public  final class Bath extends
@@ -342,6 +346,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * BATH
+   * </pre>
+   *
    * Protobuf type {@code home.Bath}
    */
   public static final class Builder extends

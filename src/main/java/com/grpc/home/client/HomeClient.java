@@ -3,6 +3,8 @@ package com.grpc.home.client;
 import com.proto.home.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
 import java.util.Arrays;
@@ -26,8 +28,8 @@ public class HomeClient {
         //doBathCall(channel);
         //doLightCall(channel);
         //doPrinterCall(channel);
-        doVacuumCall(channel);
-
+        //doVacuumCall(channel);
+        doVacuumWithDeadline(channel);
 
         System.out.println("Shutting down channel");
         channel.shutdown();
@@ -199,4 +201,38 @@ public class HomeClient {
 
     }
 
+    private void doVacuumWithDeadline(ManagedChannel channel) {
+        HomeServiceGrpc.HomeServiceBlockingStub blockingStub = HomeServiceGrpc.newBlockingStub(channel);
+
+        // first call (3000 ms deadline)
+        try {
+            System.out.println("Sending a request with a deadline of 3000 ms");
+            VacuumWithDeadlineResponse response = blockingStub.withDeadlineAfter(3000, TimeUnit.MILLISECONDS).vacuumWithDeadline(VacuumWithDeadlineRequest.newBuilder().setVacuum(
+                    Vacuum.newBuilder().setAction("Clean Kitchen")
+            ).build());
+            System.out.println(response.getResult());
+        } catch (StatusRuntimeException e) {
+            if (e.getStatus().getCode() == Status.Code.DEADLINE_EXCEEDED) {
+                System.out.println("Deadline has been exceeded, we don't want the response");
+            } else {
+                e.printStackTrace();
+            }
+        }
+
+
+        // second call (100 ms deadline)
+        try {
+            System.out.println("Sending a request with a deadline of 100 ms");
+            VacuumWithDeadlineResponse response = blockingStub.withDeadlineAfter(100, TimeUnit.MILLISECONDS).vacuumWithDeadline(VacuumWithDeadlineRequest.newBuilder().setVacuum(
+                    Vacuum.newBuilder().setAction("Clean Kitchen")
+            ).build());
+            System.out.println(response.getResult());
+        } catch (StatusRuntimeException e) {
+            if (e.getStatus().getCode() == Status.Code.DEADLINE_EXCEEDED) {
+                System.out.println("Deadline has been exceeded, we don't want the response");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
 }
