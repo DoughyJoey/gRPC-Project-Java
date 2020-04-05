@@ -10,9 +10,10 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
     @Override
     public StreamObserver<SleepAverageRequest> sleepAverage(StreamObserver<SleepAverageResponse> responseObserver) {
         StreamObserver<SleepAverageRequest> requestObserver = new StreamObserver<SleepAverageRequest>() {
-            // running sum and count
+            // initialise sum and count
             int sum = 0;
             int count = 0;
+
 
             @Override
             public void onNext(SleepAverageRequest value) {
@@ -27,10 +28,12 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
 
             }
 
+            // complete the rpc call
             @Override
             public void onCompleted() {
                 // compute average
                 double average = (double) sum / count;
+                // build the response
                 responseObserver.onNext(
                         SleepAverageResponse.newBuilder()
                                 .setAverage(average)
@@ -48,12 +51,17 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
 
         return new StreamObserver<MaxHeartRateRequest>() {
 
+            // initialise current maximum
             int currentMaximum = 0;
+
 
             @Override
             public void onNext(MaxHeartRateRequest value) {
+                // get the current number from the client
                 int currentNumber = value.getNumber();
 
+                // if the current number is greater than the current maximum
+                // set the current number to the maximum
                 if (currentNumber > currentMaximum) {
                     currentMaximum = currentNumber;
                     responseObserver.onNext(
@@ -66,11 +74,13 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
                 }
             }
 
+
             @Override
             public void onError(Throwable t) {
                 responseObserver.onCompleted();
             }
 
+            // complete the rpc call
             @Override
             public void onCompleted() {
                 // send the current last maximum
@@ -86,6 +96,7 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
 
     @Override
     public void calories(CalorieRequest request, StreamObserver<CalorieResponse> responseObserver) {
+        // sets the calorie response to the sum of the input values
         CalorieResponse calorieResponse = CalorieResponse.newBuilder()
                 .setSumResult(request.getFirstNumber() + request.getSecondNumber() +
                               request.getThirdNumber() + request.getFourthNumber() +
@@ -99,10 +110,13 @@ public class WatchServiceImpl extends WatchServiceGrpc.WatchServiceImplBase {
 
     @Override
     public void alarm(AlarmRequest request, StreamObserver<AlarmResponse> responseObserver) {
+        // get the time from the client
         int time = request.getAlarm().getTime();
 
         try {
+            // iterate over the number times the user sets
             for (int i = 0; i < time; i++) {
+                // print result to the user
                 String result = "Wake up! You have slept for " + time + "hours ";
                 AlarmResponse response = AlarmResponse.newBuilder()
                         .setResult(result)

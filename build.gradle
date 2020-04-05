@@ -38,6 +38,10 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync
     compile group: 'org.mongodb', name: 'mongodb-driver-sync', version: '4.0.1'
+
+    // https://mvnrepository.com/artifact/org.jmdns/jmdns
+    compile group: 'org.jmdns', name: 'jmdns', version: '3.5.1'
+
 }
 
 // if you have source imports issues, add the below

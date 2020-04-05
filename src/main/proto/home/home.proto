@@ -5,17 +5,20 @@ package home;
 option java_package = "com.proto.home";
 option java_multiple_files = true;
 
+// BATH ENUM
 enum TempSentiment {
     COLD = 0;
     WARM = 1;
     HOT = 2;
 }
 
+// PRINTER ENUM
 enum Orientation {
     PORTRAIT = 0;
     LANDSCAPE = 1;
 }
 
+// LIGHT ENUM
 enum Action {
     ON = 0;
     OFF = 1;
@@ -96,6 +99,6 @@ service HomeService {
 
     rpc Vacuum(stream VacuumRequest) returns (stream VacuumResponse) {}; // bidirectional streaming
 
-    rpc VacuumWithDeadline(VacuumWithDeadlineRequest) returns (VacuumWithDeadlineResponse) {}; // simple stream with deadline
+    rpc VacuumWithDeadline(VacuumWithDeadlineRequest) returns (VacuumWithDeadlineResponse) {}; // simple with deadline
 
 }

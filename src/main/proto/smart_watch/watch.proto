@@ -5,7 +5,7 @@ package smart_watch;
 option java_package = "com.proto.smart_watch";
 option java_multiple_files = true;
 
-
+// CALORIES
 message CalorieRequest {
     int32 first_number = 1;
     int32 second_number = 2;
@@ -18,6 +18,7 @@ message CalorieResponse {
     int32 sum_result = 1;
 }
 
+// SLEEP AVERAGE
 message SleepAverageRequest {
     int32 number = 1;
 }
@@ -26,6 +27,7 @@ message SleepAverageResponse {
     double average = 1;
 }
 
+//ALARM
 message Alarm {
     int32 time = 1;
 }
@@ -38,6 +40,7 @@ message AlarmResponse {
     string result = 1;
 }
 
+// HEART RATE
 message MaxHeartRateRequest {
     int32 number = 1;
 }

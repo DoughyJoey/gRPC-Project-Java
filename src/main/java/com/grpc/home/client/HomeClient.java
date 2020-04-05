@@ -1,36 +1,44 @@
 package com.grpc.home.client;
 
 import com.proto.home.*;
+import com.proto.home.Action;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
-
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+
 
 public class HomeClient {
 
     public static void main(String[] args) {
         System.out.println("Hello I'm a gRPC client");
 
+        // creates the HomeClient
         HomeClient main = new HomeClient();
+        // calls run method
         main.run();
     }
 
+
+
     private void run() {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50055)
+        // creates the channel
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052)
                 .usePlaintext()
                 .build();
 
-        //doBathCall(channel);
-        //doLightCall(channel);
-        //doPrinterCall(channel);
-        //doVacuumCall(channel);
+        // calls home service methods
+        doBathCall(channel);
+        doLightCall(channel);
+        doPrinterCall(channel);
+        doVacuumCall(channel);
         doVacuumWithDeadline(channel);
 
+        // shutdown the channel
         System.out.println("Shutting down channel");
         channel.shutdown();
 
@@ -202,16 +210,19 @@ public class HomeClient {
     }
 
     private void doVacuumWithDeadline(ManagedChannel channel) {
+        // creates the client
         HomeServiceGrpc.HomeServiceBlockingStub blockingStub = HomeServiceGrpc.newBlockingStub(channel);
 
         // first call (3000 ms deadline)
         try {
             System.out.println("Sending a request with a deadline of 3000 ms");
+            // after a deadline of 3000 ms, do the vacuum deadline request
             VacuumWithDeadlineResponse response = blockingStub.withDeadlineAfter(3000, TimeUnit.MILLISECONDS).vacuumWithDeadline(VacuumWithDeadlineRequest.newBuilder().setVacuum(
                     Vacuum.newBuilder().setAction("Clean Kitchen")
             ).build());
             System.out.println(response.getResult());
         } catch (StatusRuntimeException e) {
+            // if the deadline has exceeded, print DEADLINE_EXCEEDED
             if (e.getStatus().getCode() == Status.Code.DEADLINE_EXCEEDED) {
                 System.out.println("Deadline has been exceeded, we don't want the response");
             } else {
@@ -221,13 +232,16 @@ public class HomeClient {
 
 
         // second call (100 ms deadline)
+        // this call should show DEADLINE_EXCEEDED response
         try {
             System.out.println("Sending a request with a deadline of 100 ms");
+            // after a deadline of 100 ms, do the vacuum deadline request
             VacuumWithDeadlineResponse response = blockingStub.withDeadlineAfter(100, TimeUnit.MILLISECONDS).vacuumWithDeadline(VacuumWithDeadlineRequest.newBuilder().setVacuum(
                     Vacuum.newBuilder().setAction("Clean Kitchen")
             ).build());
             System.out.println(response.getResult());
         } catch (StatusRuntimeException e) {
+            // if the deadline has exceeded, print DEADLINE_EXCEEDED
             if (e.getStatus().getCode() == Status.Code.DEADLINE_EXCEEDED) {
                 System.out.println("Deadline has been exceeded, we don't want the response");
             } else {

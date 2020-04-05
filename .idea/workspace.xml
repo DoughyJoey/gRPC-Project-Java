@@ -2,61 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19787c98-5fb2-4949-8d8b-022c11c9ba8b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/jmdns/HTTPServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/jmdns/HomeServiceDiscovery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grpc/jmdns/HomeServiceRegistration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/home/HomeServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/grpc/com/proto/home/HomeServiceGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Bath.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Bath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Light.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Orientation.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Orientation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Vacuum.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/source/proto/main/java/com/proto/home/Vacuum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/greeting/client/GreetingClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/greeting/server/GreetingServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/alexa/client/AlexaClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/alexa/client/AlexaClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/alexa/server/AlexaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/alexa/server/AlexaServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/home/client/HomeClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/home/client/HomeClient$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/home/client/HomeClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/home/client/HomeClient$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/home/client/HomeClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/home/client/HomeClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServiceImpl$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServiceImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServiceImpl$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/home/server/HomeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Bath$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Bath$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Bath$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Bath$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Bath.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Bath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceBaseDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceBaseDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceBlockingStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceBlockingStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceFileDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceFileDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceFutureStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceFutureStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceImplBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceImplBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceMethodDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceMethodDescriptorSupplier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$HomeServiceStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$MethodHandlers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc$MethodHandlers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/HomeServiceGrpc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Light$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Light$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Light$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Light$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Light.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Orientation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Orientation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Printer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Printer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Printer$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Printer$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Printer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Vacuum$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Vacuum$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Vacuum$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Vacuum$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/proto/home/Vacuum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/proto/home/Vacuum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/greeting/client/GreetingClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/greeting/server/GreetingServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/client/WatchClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/grpc/smart_watch/server/WatchServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/alexa/client/AlexaClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/alexa/client/AlexaClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/alexa/server/AlexaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/alexa/server/AlexaServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/home/client/HomeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/home/client/HomeClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/home/server/HomeServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/home/server/HomeServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/home/server/HomeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/home/server/HomeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/dummy/dummy.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/client/WatchClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/client/WatchClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/proto/home/home.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/home/home.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/proto/smart_watch/watch.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/smart_watch/watch.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/proto/task/task.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/task/task.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,16 +96,29 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jmDNS Tutorial Solution" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Application.HomeClient">
-    <configuration name="GreetingClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.grpc.greeting.client.GreetingClient" />
+  <component name="RunManager" selected="Application.AlexaClient">
+    <configuration name="AlexaClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.grpc.alexa.client.AlexaClient" />
       <module name="grpc-java-project.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.grpc.greeting.client.*" />
+          <option name="PATTERN" value="com.grpc.alexa.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlexaServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.grpc.alexa.server.AlexaServer" />
+      <module name="grpc-java-project.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grpc.alexa.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,31 +165,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="grpc-java-project [generateProto]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="generateProto" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AlexaClient" />
+        <item itemvalue="Application.AlexaServer" />
         <item itemvalue="Application.HomeClient" />
         <item itemvalue="Application.HomeServer" />
-        <item itemvalue="Gradle.grpc-java-project [generateProto]" />
-        <item itemvalue="Application.GreetingClient" />
         <item itemvalue="Application.WatchClient" />
       </list>
     </recent_temporary>
@@ -224,38 +193,62 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="282" y="270" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585414303507" />
-    <state x="421" y="98" key="FileChooserDialogImpl" timestamp="1585757685656">
+    <state x="371" y="90" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586095281363">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585757685656" />
-    <state width="1237" height="223" key="GridCell.Tab.0.bottom" timestamp="1585909970207">
+    <state x="371" y="90" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1586095281363" />
+    <state x="-1288" y="150" key="FileChooserDialogImpl" timestamp="1586093021890">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1288" y="150" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586093021890" />
+    <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585944367640" />
+    <state width="1237" height="73" key="GridCell.Tab.0.bottom" timestamp="1586109489728">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="223" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585909970207" />
-    <state width="1237" height="223" key="GridCell.Tab.0.center" timestamp="1585909970207">
+    <state width="1877" height="323" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586026389659" />
+    <state width="1237" height="73" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1586109489728" />
+    <state width="1877" height="323" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586030705274" />
+    <state width="1237" height="73" key="GridCell.Tab.0.center" timestamp="1586109489728">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="223" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585909970207" />
-    <state width="1237" height="223" key="GridCell.Tab.0.left" timestamp="1585909970206">
+    <state width="1877" height="323" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586026389659" />
+    <state width="1237" height="73" key="GridCell.Tab.0.center/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1586109489728" />
+    <state width="1877" height="323" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586030705274" />
+    <state width="1237" height="73" key="GridCell.Tab.0.left" timestamp="1586109489728">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="223" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585909970206" />
-    <state width="1237" height="223" key="GridCell.Tab.0.right" timestamp="1585909970207">
+    <state width="1877" height="323" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586026389658" />
+    <state width="1237" height="73" key="GridCell.Tab.0.left/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1586109489728" />
+    <state width="1877" height="323" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586030705274" />
+    <state width="1237" height="73" key="GridCell.Tab.0.right" timestamp="1586109489728">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585596372087" />
-    <state width="1237" height="223" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585909970207" />
+    <state width="1877" height="323" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586026389659" />
+    <state width="1237" height="73" key="GridCell.Tab.0.right/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1586109489728" />
+    <state width="1877" height="323" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586030705274" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1585411868067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585411868067" />
-    <state x="349" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1585911230009">
+    <state x="349" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1586110816831">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="-1396" y="257" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585841482099" />
-    <state x="349" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1585911230009" />
+    <state x="-1396" y="257" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586083213098" />
+    <state x="349" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1586110816831" />
+    <state x="349" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585997448151" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/grpc/smart_watch/server/WatchServiceImpl.java</url>
+          <line>49</line>
+          <properties class="com.grpc.smart_watch.server.WatchServiceImpl" method="maxHeartRate">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

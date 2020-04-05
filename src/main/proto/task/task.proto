@@ -5,14 +5,14 @@ package task;
 option java_package = "com.proto.task";
 option java_multiple_files = true;
 
-service TaskService {
-    rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse) {}
-    rpc ReadTask(ReadTaskRequest) returns (ReadTaskResponse){}; // returns NOT_FOUND if task is not found
-    rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse){}; // returns NOT_FOUND if task is not found
-    rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse){}; // returns NOT_FOUND if task is not found
-    rpc ListTask(ListTaskRequest) returns (stream ListTaskResponse){}; // server streaming response
+// TASK
+message Task {
+    string id = 1;
+    string title = 2;
+    string content = 3;
 }
 
+// CREATE A TASK
 message CreateTaskRequest {
     Task task = 1;
 }
@@ -21,6 +21,7 @@ message CreateTaskResponse {
     Task task = 1;
 }
 
+// READ TASK
 message ReadTaskRequest {
     string task_id = 1;
 }
@@ -29,6 +30,7 @@ message ReadTaskResponse {
     Task task = 1;
 }
 
+// UPDATE A TASK
 message UpdateTaskRequest {
     Task task = 1;
 }
@@ -37,6 +39,7 @@ message UpdateTaskResponse {
     Task task = 1;
 }
 
+// DELETE A TASK
 message DeleteTaskRequest {
     string task_id = 1;
 }
@@ -45,6 +48,7 @@ message DeleteTaskResponse {
     string task_id = 1;
 }
 
+// LIST ALL TASKS
 message ListTaskRequest {
 
 }
@@ -53,9 +57,11 @@ message ListTaskResponse {
     Task task = 1;
 }
 
-message Task {
-    string id = 1;
-    string title = 2;
-    string content = 3;
+service TaskService {
+    rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse) {};
+    rpc ReadTask(ReadTaskRequest) returns (ReadTaskResponse){}; // returns NOT_FOUND if task is not found
+    rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse){}; // returns NOT_FOUND if task is not found
+    rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse){}; // returns NOT_FOUND if task is not found
+    rpc ListTask(ListTaskRequest) returns (stream ListTaskResponse){}; // server streaming response
 }
 
